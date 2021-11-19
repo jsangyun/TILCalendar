@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		443C14D727479D78007AE994 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 443C14D627479D78007AE994 /* GoogleService-Info.plist */; };
 		443C14D92747A04E007AE994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443C14D82747A04E007AE994 /* Main.storyboard */; };
 		44419747271AAFE900B648DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44419746271AAFE900B648DE /* AppDelegate.swift */; };
 		44419749271AAFE900B648DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44419748271AAFE900B648DE /* SceneDelegate.swift */; };
@@ -18,7 +17,6 @@
 
 /* Begin PBXFileReference section */
 		0F6E0B0ECE0D0E6315F9B25D /* Pods-Patricks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.release.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.release.xcconfig"; sourceTree = "<group>"; };
-		443C14D627479D78007AE994 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		443C14D82747A04E007AE994 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		44419743271AAFE900B648DE /* Patricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44419746271AAFE900B648DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +45,6 @@
 			children = (
 				4441974F271AAFEA00B648DE /* Assets.xcassets */,
 				44419751271AAFEA00B648DE /* LaunchScreen.storyboard */,
-				443C14D627479D78007AE994 /* GoogleService-Info.plist */,
 				44419746271AAFE900B648DE /* AppDelegate.swift */,
 				44419748271AAFE900B648DE /* SceneDelegate.swift */,
 				44419754271AAFEA00B648DE /* Info.plist */,
@@ -193,7 +190,6 @@
 			files = (
 				44419753271AAFEA00B648DE /* LaunchScreen.storyboard in Resources */,
 				44419750271AAFEA00B648DE /* Assets.xcassets in Resources */,
-				443C14D727479D78007AE994 /* GoogleService-Info.plist in Resources */,
 				443C14D92747A04E007AE994 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
