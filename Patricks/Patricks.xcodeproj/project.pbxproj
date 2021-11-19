@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		443C14D727479D78007AE994 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 443C14D627479D78007AE994 /* GoogleService-Info.plist */; };
+		443C14D92747A04E007AE994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443C14D82747A04E007AE994 /* Main.storyboard */; };
 		44419747271AAFE900B648DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44419746271AAFE900B648DE /* AppDelegate.swift */; };
 		44419749271AAFE900B648DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44419748271AAFE900B648DE /* SceneDelegate.swift */; };
 		44419750271AAFEA00B648DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4441974F271AAFEA00B648DE /* Assets.xcassets */; };
@@ -18,12 +19,13 @@
 /* Begin PBXFileReference section */
 		0F6E0B0ECE0D0E6315F9B25D /* Pods-Patricks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.release.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.release.xcconfig"; sourceTree = "<group>"; };
 		443C14D627479D78007AE994 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		443C14D82747A04E007AE994 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		44419743271AAFE900B648DE /* Patricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44419746271AAFE900B648DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44419748271AAFE900B648DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4441974F271AAFEA00B648DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44419752271AAFEA00B648DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		44419754271AAFEA00B648DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44419754271AAFEA00B648DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Patricks/App/Info.plist; sourceTree = SOURCE_ROOT; };
 		5E09509BB5BED2417D12F14A /* Pods-Patricks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.debug.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.debug.xcconfig"; sourceTree = "<group>"; };
 		F1CAE7ACC9BFCDD30E232D20 /* Pods_Patricks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Patricks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -45,12 +47,44 @@
 			children = (
 				4441974F271AAFEA00B648DE /* Assets.xcassets */,
 				44419751271AAFEA00B648DE /* LaunchScreen.storyboard */,
-				44419754271AAFEA00B648DE /* Info.plist */,
 				443C14D627479D78007AE994 /* GoogleService-Info.plist */,
 				44419746271AAFE900B648DE /* AppDelegate.swift */,
 				44419748271AAFE900B648DE /* SceneDelegate.swift */,
+				44419754271AAFEA00B648DE /* Info.plist */,
+				443C14D82747A04E007AE994 /* Main.storyboard */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		443C14DB2747A155007AE994 /* TIL */ = {
+			isa = PBXGroup;
+			children = (
+				443C14DC2747A21A007AE994 /* Model */,
+				443C14DE2747A233007AE994 /* View */,
+				443C14DD2747A223007AE994 /* ViewModel */,
+			);
+			path = TIL;
+			sourceTree = "<group>";
+		};
+		443C14DC2747A21A007AE994 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		443C14DD2747A223007AE994 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		443C14DE2747A233007AE994 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4441973A271AAFE900B648DE = {
@@ -75,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				443C14D52747986E007AE994 /* App */,
+				443C14DB2747A155007AE994 /* TIL */,
 			);
 			path = Patricks;
 			sourceTree = "<group>";
@@ -159,6 +194,7 @@
 				44419753271AAFEA00B648DE /* LaunchScreen.storyboard in Resources */,
 				44419750271AAFEA00B648DE /* Assets.xcassets in Resources */,
 				443C14D727479D78007AE994 /* GoogleService-Info.plist in Resources */,
+				443C14D92747A04E007AE994 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +392,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Patricks/Info.plist;
+				INFOPLIST_FILE = Patricks/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -385,7 +421,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Patricks/Info.plist;
+				INFOPLIST_FILE = Patricks/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
