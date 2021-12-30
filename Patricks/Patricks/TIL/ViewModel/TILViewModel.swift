@@ -23,9 +23,9 @@ class TILViewModel {
     func searchTIL(_ dateString: String) -> Bool {
         var result: Bool = false
         
-        allTIL
-            .map { }
-            .dispose()
+//        allTIL
+//            .map { }
+//            .dispose()
         
         return result
     }
@@ -48,8 +48,8 @@ class TILViewModel {
             .onNext(newList)
     }
     
-    func getSubjectTIL(subjectId: Int) -> [TIL] {
-        allTIL
-            .filter({ $0.e})
-    }
+//    func getSubjectTIL(subjectId: Int) -> [TIL] {
+//        allTIL
+//            .filter({ $0.e})
+//    }
 }
