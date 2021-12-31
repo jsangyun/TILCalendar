@@ -23,24 +23,50 @@ class TILMainViewController: UIViewController {
         setNavigationBar()
         setDelegate()
         setCalendarAppearance()
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func setDelegate() {
+        tilCalendar.dataSource = self
+        tilCalendar.delegate = self
+    }
+}
+
+//FSCalendar 코드
+extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
+    
+    // 캘린더 날짜 클릭 이벤트
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "TILTableViewController") as? TILTableViewController else { return }
+        
+        detailVC.selectedDate = date
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    // 날짜 밑 점 찍기
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        
+        var events: [String] = []
         
         _ = viewModel.allTIL
             .take(1)
-            .subscribe(onNext: { tils in
-                for til in tils {
-                    print(til.createdDate)
+            .subscribe(onNext:{
+                $0.forEach {
+                    events.append($0.createdDate)
                 }
             })
-            .disposed(by: disposeBag)
         
-        tilCalendar.reloadData()
+        if events.contains(APIService.formatDateToString(date)) {
+            return 1
+        } else {
+            return 0
+        }
     }
-    
+}
+
+//Appearance 코드들
+extension TILMainViewController {
     func setNavigationBar() {
         //Larget Title Color
         self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.96, green: 0.87, blue: 0.66, alpha: 1)]
@@ -48,11 +74,6 @@ class TILMainViewController: UIViewController {
         
         //Title Text
         self.navigationItem.title = "TIL Calendar"
-    }
-    
-    func setDelegate() {
-        tilCalendar.dataSource = self
-        tilCalendar.delegate = self
     }
     
     func setCalendarAppearance() {
@@ -73,50 +94,5 @@ class TILMainViewController: UIViewController {
         tilCalendar.appearance.selectionColor = UIColor(red: 0.59, green: 0.16, blue: 0.17, alpha: 0.8)
         tilCalendar.appearance.todayColor = UIColor(red: 0.96, green: 0.87, blue: 0.66, alpha: 1)
         tilCalendar.appearance.eventDefaultColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
-    
-    }
-
-}
-
-extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
-    
-    // Date Select Event
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy년 MM월 dd일"
-        
-        guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "TILDetailViewController") as? TILDetailViewController else { return }
-        
-        if viewModel.searchTIL(APIService.formatDateToString(date)) {
-            print("YES!")
-        } else {
-            print("NO ㅠㅠ")
-        }
-        
-        detailVC.selectedDate = date
-        detailVC.viewModel = self.viewModel
-        self.navigationController?.pushViewController(detailVC, animated: true)
-            
-    }
-    
-    // 날짜 밑 점 찍기
-    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        
-        var events: [String] = []
-        
-        _ = viewModel.allTIL
-            .take(1)
-            .subscribe(onNext:{ tils in
-                for til in tils {
-                    events.append(til.createdDate)
-                }
-            })
-        
-        if events.contains(APIService.formatDateToString(date)) {
-            return 1
-        } else {
-            return 0
-        }
     }
 }

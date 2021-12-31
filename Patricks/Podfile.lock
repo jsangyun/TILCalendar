@@ -1,30 +1,40 @@
 PODS:
+  - Differentiator (5.0.0)
   - FSCalendar (2.8.2)
-  - RxCocoa (5.1.3):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.1.3):
-    - RxSwift (~> 5)
-  - RxSwift (5.1.3)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
 
 DEPENDENCIES:
   - FSCalendar
-  - RxCocoa (~> 5)
-  - RxSwift (~> 5)
+  - RxCocoa (= 6.2.0)
+  - RxDataSources (~> 5.0)
+  - RxSwift (= 6.2.0)
 
 SPEC REPOS:
   trunk:
+    - Differentiator
     - FSCalendar
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
-  RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
-  RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
-  RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
 
-PODFILE CHECKSUM: 48b9fb56a5b9f9916ec480acff25f3609b90f3b8
+PODFILE CHECKSUM: 427e492d512ef9ec3adc0ff3c0cac85e8f8181bd
 
 COCOAPODS: 1.11.2

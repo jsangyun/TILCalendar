@@ -12,17 +12,14 @@ struct Subject: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case createdDate = "created_date"
     }
     
     var id : Int
     var name: String
-    var createdDate: String
     
-    init(_ id: Int, _ name: String, _ createdDate: Date = Date()) {
+    init(_ id: Int, _ name: String) {
         self.id = id
         self.name = name
-        self.createdDate = APIService.formatDateToString(createdDate)
     }
     
     /*

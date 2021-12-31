@@ -1,14 +1,10 @@
 import Foundation
+import RxSwift
 
-func fact(_ x: Int) -> Int {
-    var temp: Int
-    temp = x;
-    if(temp == 0) {
-        return 1;
-    } else {
-        temp = temp * fact(temp-1);
-    }
-    return temp;
-}
+var lists = BehaviorSubject<[String]>(value: ["Hello", "fuck you"])
 
-print(fact(5))
+var result = lists
+                .map{
+                    $0.filter{$0=="Hello"}
+                }
+print(result)

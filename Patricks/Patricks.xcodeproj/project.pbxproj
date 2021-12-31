@@ -20,16 +20,20 @@
 		4441D72427608E25003C13EF /* SubjectMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D72327608E25003C13EF /* SubjectMainViewController.swift */; };
 		4441D72627609256003C13EF /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D72527609256003C13EF /* SubjectTableViewCell.swift */; };
 		4441D72827609D1B003C13EF /* SubjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D72727609D1B003C13EF /* SubjectDetailViewController.swift */; };
+		44B851C2277D8856002524DF /* til.json in Resources */ = {isa = PBXBuildFile; fileRef = 44B851C1277D8856002524DF /* til.json */; };
+		44B851C4277D8861002524DF /* subject.json in Resources */ = {isa = PBXBuildFile; fileRef = 44B851C3277D8861002524DF /* subject.json */; };
+		44B851C6277E345F002524DF /* TILTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B851C5277E345F002524DF /* TILTableViewCell.swift */; };
+		44B851C8277F1D86002524DF /* TILDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B851C7277F1D86002524DF /* TILDetailViewController.swift */; };
 		44F990CE275A01D300A75F6D /* TILViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990CD275A01D300A75F6D /* TILViewModel.swift */; };
 		44F990D4275B27D000A75F6D /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990D3275B27D000A75F6D /* SubjectModel.swift */; };
 		44F990D6275B32FF00A75F6D /* Subject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F990D5275B32FF00A75F6D /* Subject.storyboard */; };
-		44F990D8275DE8DA00A75F6D /* TILDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990D7275DE8DA00A75F6D /* TILDetailViewController.swift */; };
-		71060ADA033FD03BB685C397 /* Pods_Patricks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20722DA13722AE461F9D6487 /* Pods_Patricks.framework */; };
+		44F990D8275DE8DA00A75F6D /* TILTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990D7275DE8DA00A75F6D /* TILTableViewController.swift */; };
+		775183E372494450F5F76842 /* Pods_Patricks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AEC76762A30B55CD90DAD5 /* Pods_Patricks.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20722DA13722AE461F9D6487 /* Pods_Patricks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Patricks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		420A8DCD0E5DBFDBE09940E2 /* Pods-Patricks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.debug.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.debug.xcconfig"; sourceTree = "<group>"; };
+		1A92A160DFEC2E938C799403 /* Pods-Patricks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.debug.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.debug.xcconfig"; sourceTree = "<group>"; };
+		30AEC76762A30B55CD90DAD5 /* Pods_Patricks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Patricks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		443C14D82747A04E007AE994 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		443C14E12747AA1F007AE994 /* TIL.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TIL.storyboard; sourceTree = "<group>"; };
 		443C14E32747AC0F007AE994 /* TILMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILMainViewController.swift; sourceTree = "<group>"; };
@@ -46,11 +50,15 @@
 		4441D72327608E25003C13EF /* SubjectMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectMainViewController.swift; sourceTree = "<group>"; };
 		4441D72527609256003C13EF /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		4441D72727609D1B003C13EF /* SubjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailViewController.swift; sourceTree = "<group>"; };
+		44B851C1277D8856002524DF /* til.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = til.json; sourceTree = "<group>"; };
+		44B851C3277D8861002524DF /* subject.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = subject.json; sourceTree = "<group>"; };
+		44B851C5277E345F002524DF /* TILTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILTableViewCell.swift; sourceTree = "<group>"; };
+		44B851C7277F1D86002524DF /* TILDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILDetailViewController.swift; sourceTree = "<group>"; };
 		44F990CD275A01D300A75F6D /* TILViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILViewModel.swift; sourceTree = "<group>"; };
 		44F990D3275B27D000A75F6D /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		44F990D5275B32FF00A75F6D /* Subject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Subject.storyboard; sourceTree = "<group>"; };
-		44F990D7275DE8DA00A75F6D /* TILDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILDetailViewController.swift; sourceTree = "<group>"; };
-		96B9EF81141AF47EC77BC20A /* Pods-Patricks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.release.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.release.xcconfig"; sourceTree = "<group>"; };
+		44F990D7275DE8DA00A75F6D /* TILTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILTableViewController.swift; sourceTree = "<group>"; };
+		AF38757CB48A70C662DB8826 /* Pods-Patricks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.release.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71060ADA033FD03BB685C397 /* Pods_Patricks.framework in Frameworks */,
+				775183E372494450F5F76842 /* Pods_Patricks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +117,9 @@
 			children = (
 				443C14E12747AA1F007AE994 /* TIL.storyboard */,
 				443C14E32747AC0F007AE994 /* TILMainViewController.swift */,
-				44F990D7275DE8DA00A75F6D /* TILDetailViewController.swift */,
+				44F990D7275DE8DA00A75F6D /* TILTableViewController.swift */,
+				44B851C5277E345F002524DF /* TILTableViewCell.swift */,
+				44B851C7277F1D86002524DF /* TILDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,7 +131,7 @@
 				44419745271AAFE900B648DE /* Patricks */,
 				44419744271AAFE900B648DE /* Products */,
 				59F645F507E0D58FFE895871 /* Pods */,
-				944F6BE0A4D485217B2EDC2F /* Frameworks */,
+				5016394E2C7B8CA0EE4E32F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +146,7 @@
 		44419745271AAFE900B648DE /* Patricks */ = {
 			isa = PBXGroup;
 			children = (
+				44B851C0277D882F002524DF /* Resources */,
 				443C14D52747986E007AE994 /* App */,
 				4441D71D275F32AE003C13EF /* CustomAPI */,
 				443C14DB2747A155007AE994 /* TIL */,
@@ -150,6 +161,15 @@
 				4441D71E275F3537003C13EF /* APIService.swift */,
 			);
 			path = CustomAPI;
+			sourceTree = "<group>";
+		};
+		44B851C0277D882F002524DF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44B851C1277D8856002524DF /* til.json */,
+				44B851C3277D8861002524DF /* subject.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		44F990CF275B279900A75F6D /* Subject */ = {
@@ -189,21 +209,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5016394E2C7B8CA0EE4E32F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30AEC76762A30B55CD90DAD5 /* Pods_Patricks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		59F645F507E0D58FFE895871 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				420A8DCD0E5DBFDBE09940E2 /* Pods-Patricks.debug.xcconfig */,
-				96B9EF81141AF47EC77BC20A /* Pods-Patricks.release.xcconfig */,
+				1A92A160DFEC2E938C799403 /* Pods-Patricks.debug.xcconfig */,
+				AF38757CB48A70C662DB8826 /* Pods-Patricks.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		944F6BE0A4D485217B2EDC2F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				20722DA13722AE461F9D6487 /* Pods_Patricks.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,11 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44419757271AAFEA00B648DE /* Build configuration list for PBXNativeTarget "Patricks" */;
 			buildPhases = (
-				7FDF2198749B49F86ED0F5AE /* [CP] Check Pods Manifest.lock */,
+				0E77C1633BC9FA0A258E6AC8 /* [CP] Check Pods Manifest.lock */,
 				4441973F271AAFE900B648DE /* Sources */,
 				44419740271AAFE900B648DE /* Frameworks */,
 				44419741271AAFE900B648DE /* Resources */,
-				49637972541A2C01CAC97B11 /* [CP] Embed Pods Frameworks */,
+				515CB57CDA818B89B9282F32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,30 +291,15 @@
 				44419750271AAFEA00B648DE /* Assets.xcassets in Resources */,
 				443C14E22747AA1F007AE994 /* TIL.storyboard in Resources */,
 				443C14D92747A04E007AE994 /* Main.storyboard in Resources */,
+				44B851C2277D8856002524DF /* til.json in Resources */,
+				44B851C4277D8861002524DF /* subject.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		49637972541A2C01CAC97B11 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Patricks/Pods-Patricks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Patricks/Pods-Patricks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Patricks/Pods-Patricks-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7FDF2198749B49F86ED0F5AE /* [CP] Check Pods Manifest.lock */ = {
+		0E77C1633BC9FA0A258E6AC8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -316,6 +321,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		515CB57CDA818B89B9282F32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Patricks/Pods-Patricks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Patricks/Pods-Patricks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Patricks/Pods-Patricks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -328,11 +350,13 @@
 				4441D72827609D1B003C13EF /* SubjectDetailViewController.swift in Sources */,
 				44419747271AAFE900B648DE /* AppDelegate.swift in Sources */,
 				4441D72227608D7D003C13EF /* SubjectViewModel.swift in Sources */,
+				44B851C8277F1D86002524DF /* TILDetailViewController.swift in Sources */,
+				44B851C6277E345F002524DF /* TILTableViewCell.swift in Sources */,
 				44F990D4275B27D000A75F6D /* SubjectModel.swift in Sources */,
 				443C14E42747AC0F007AE994 /* TILMainViewController.swift in Sources */,
 				4441D72627609256003C13EF /* SubjectTableViewCell.swift in Sources */,
 				44419749271AAFE900B648DE /* SceneDelegate.swift in Sources */,
-				44F990D8275DE8DA00A75F6D /* TILDetailViewController.swift in Sources */,
+				44F990D8275DE8DA00A75F6D /* TILTableViewController.swift in Sources */,
 				4441D71F275F3537003C13EF /* APIService.swift in Sources */,
 				443C14E62748C0D5007AE994 /* TILModel.swift in Sources */,
 			);
@@ -470,7 +494,7 @@
 		};
 		44419758271AAFEA00B648DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 420A8DCD0E5DBFDBE09940E2 /* Pods-Patricks.debug.xcconfig */;
+			baseConfigurationReference = 1A92A160DFEC2E938C799403 /* Pods-Patricks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -499,7 +523,7 @@
 		};
 		44419759271AAFEA00B648DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96B9EF81141AF47EC77BC20A /* Pods-Patricks.release.xcconfig */;
+			baseConfigurationReference = AF38757CB48A70C662DB8826 /* Pods-Patricks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
