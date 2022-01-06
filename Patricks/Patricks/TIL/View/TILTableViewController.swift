@@ -1,5 +1,5 @@
 //
-//  TILDetailViewController.swift
+//  TILTableViewController.swift
 //  Patricks
 //
 //  Created by 정상윤 on 2021/12/06.
@@ -8,47 +8,71 @@
 import UIKit
 import RxSwift
 import RxCocoa
-//import RxDataSources
 
-class TILTableViewController: UIViewController {
+class TILTableViewController: UITableViewController {
 
-    @IBOutlet weak var TILTableView: UITableView!
+    @IBOutlet weak var tilTableView: UITableView!
     
     var selectedDate: Date!
+    var selectedTil: TIL? = nil
+    
     var tilViewModel = TILViewModel()
     var subjectViewModel = SubjectViewModel()
     var disposeBag = DisposeBag()
-    var tilList: [TIL] = []
+    
+    var thisDayTIL: [TIL] = []
+    let cellIdentifier = "TILTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavigationBar()
-//        tilList = tilViewModel.getTILByDate(selectedDate)
+        
         _ = tilViewModel.allTIL
+            .observe(on: MainScheduler.instance)
             .map{
                 $0.filter{$0.createdDate == APIService.formatDateToString(self.selectedDate)}
             }
-            .bind(to: TILTableView.rx.items(cellIdentifier: "TILTableViewCell", cellType: TILTableViewCell.self)) { index, item, cell in
-                
-                cell.tilTitleLabel.text = item.title
-                cell.subjectNameLabel.text = self.subjectViewModel.getSubjectNameById(item.subjectId)
-                
-            }
+            .subscribe(onNext: { [weak self] tils in
+                self?.thisDayTIL = tils
+                self?.tilTableView.reloadData()
+            })
             .disposed(by: disposeBag)
+        
+    }
+}
+
+extension TILTableViewController {
+    
+    //row select event
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedTil = thisDayTIL[indexPath.row]
+        if let detailVC = storyboard?.instantiateViewController(withIdentifier: "TILDetailViewController") as? TILDetailViewController {
+            detailVC.til = selectedTil
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
     
-    /*
-    @objc
-    func deleteButtonPressed() {
-        print("Delete Button Pressed!")
-        self.navigationController?.popViewController(animated: true)
+    //number of row per section
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return thisDayTIL.count
     }
-    */
+    
+    //drawing cell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tilTableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! TILTableViewCell
+        
+        let data = thisDayTIL[indexPath.row]
+        
+        cell.tilTitleLabel.text = data.title
+        cell.subjectNameLabel.text = subjectViewModel.getSubjectNameById(data.subjectId)
+        
+        return cell
+    }
 }
 
 
-//TILDetailView Appearance 코드
+// Appearance code
 extension TILTableViewController {
     func setNavigationBar() {
 //        let rightButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteButtonPressed))

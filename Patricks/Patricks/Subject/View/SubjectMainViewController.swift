@@ -11,7 +11,7 @@ import RxCocoa
 
 class SubjectMainViewController: UIViewController {
 
-    let viewModel = SubjectViewModel()
+    var viewModel = SubjectViewModel()
     var disposeBag = DisposeBag()
     
     @IBOutlet weak var subjectTableView: UITableView!

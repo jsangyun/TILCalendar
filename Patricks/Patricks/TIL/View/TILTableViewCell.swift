@@ -12,4 +12,5 @@ class TILTableViewCell: UITableViewCell {
     @IBOutlet weak var tilTitleLabel: UILabel!
 
     @IBOutlet weak var subjectNameLabel: UILabel!
+    
 }

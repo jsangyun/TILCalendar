@@ -31,10 +31,10 @@ class TILMainViewController: UIViewController {
     }
 }
 
-//FSCalendar 코드
+//FSCalendar
 extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
     
-    // 캘린더 날짜 클릭 이벤트
+    // calendar click event
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "TILTableViewController") as? TILTableViewController else { return }
@@ -44,7 +44,7 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    // 날짜 밑 점 찍기
+    // drawing event dots on calendar
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         
         var events: [String] = []
