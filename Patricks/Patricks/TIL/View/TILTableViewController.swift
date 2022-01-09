@@ -14,7 +14,7 @@ class TILTableViewController: UITableViewController {
     @IBOutlet weak var tilTableView: UITableView!
     
     var selectedDate: Date!
-    var selectedTil: TIL? = nil
+    var selectedTilId: Int? = nil
     
     var tilViewModel = TILViewModel()
     var subjectViewModel = SubjectViewModel()
@@ -46,9 +46,9 @@ extension TILTableViewController {
     
     //row select event
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedTil = thisDayTIL[indexPath.row]
+        selectedTilId = thisDayTIL[indexPath.row].id
         if let detailVC = storyboard?.instantiateViewController(withIdentifier: "TILDetailViewController") as? TILDetailViewController {
-            detailVC.til = selectedTil
+            detailVC.tilId = selectedTilId
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
