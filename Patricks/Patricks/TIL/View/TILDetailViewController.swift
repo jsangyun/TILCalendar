@@ -13,6 +13,7 @@ class TILDetailViewController: UIViewController {
     @IBOutlet weak var tilSubjectLabel: UILabel!
     @IBOutlet weak var tilContentLabel: UILabel!
     
+    var til: TIL!
     var tilId: Int!
     
     var tilViewModel = TILViewModel()
@@ -26,8 +27,25 @@ class TILDetailViewController: UIViewController {
             }
             .subscribe(onNext: { [weak self] til in
                 self?.setLabelText(til[0])
+                self?.til = til[0]
             })
         
+        let rightBarButton = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(editButtonClicked))
+        
+        self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("detailView Will Appear")
+    }
+    
+    @objc private func editButtonClicked(_ sender: Any) {
+        guard let editVC = storyboard?.instantiateViewController(withIdentifier: "TILEditViewController") as? TILEditViewController else {
+            return
+        }
+        editVC.til = til
+        self.present(editVC, animated: true, completion: nil)
     }
     
     func setLabelText(_ til: TIL) {
