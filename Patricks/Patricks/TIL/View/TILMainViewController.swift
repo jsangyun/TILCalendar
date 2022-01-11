@@ -12,7 +12,9 @@ import FSCalendar
 
 class TILMainViewController: UIViewController {
     
-    var viewModel = TILViewModel()
+    var tilViewModel = TILViewModel()
+    var subjectViewModel = SubjectViewModel()
+    
     let disposeBag = DisposeBag()
     
     @IBOutlet weak var tilCalendar: FSCalendar!
@@ -37,11 +39,13 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
     // calendar click event
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
-        guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "TILTableViewController") as? TILTableViewController else { return }
+        guard let tableVC = self.storyboard?.instantiateViewController(withIdentifier: "TILTableViewController") as? TILTableViewController else { return }
         
-        detailVC.selectedDate = date
+        tableVC.selectedDate = date
+        tableVC.tilViewModel = self.tilViewModel
+        tableVC.subjectViewModel = self.subjectViewModel
         
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        self.navigationController?.pushViewController(tableVC, animated: true)
     }
     
     // drawing event dots on calendar
@@ -49,7 +53,7 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
         
         var events: [String] = []
         
-        _ = viewModel.allTIL
+        _ = tilViewModel.allTIL
             .take(1)
             .subscribe(onNext:{
                 $0.forEach {

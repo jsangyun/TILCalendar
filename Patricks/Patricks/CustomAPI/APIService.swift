@@ -56,4 +56,22 @@ class APIService {
         }
     }
     
+    static func save<T: Codable>(_ filename: String, _ data: [T]) {
+        let saveData: Data
+        let encoder = JSONEncoder()
+        let filePath = NSHomeDirectory() + "/Documents/\(filename)"
+        let fileUrl = URL(fileURLWithPath: filePath)
+        
+        do {
+            try saveData = encoder.encode(data)
+        } catch {
+            fatalError("Failed Encoding \(type(of: data))")
+        }
+        
+        do {
+            try saveData.write(to: fileUrl)
+        } catch {
+            fatalError("Failed to write to \(filename)")
+        }
+    }
 }

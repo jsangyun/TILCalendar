@@ -39,5 +39,22 @@ class TILViewModel {
         return result
     }
     
+    func savePresentData() {
+        
+    }
+    
+    func updateTil(_ til: TIL) {
+        _ = allTIL
+            .map {$0.filter{$0.id != til.id}}
+            .take(1)
+            .subscribe(onNext: {
+                $0.forEach{print($0.title)}
+                let newData: [TIL] = $0 + [til]
+                newData.forEach{print($0.title)}
+                APIService.save("til.json", newData)
+                self.allTIL.onNext(newData)
+            })
+            .dispose()
+    }
 
 }

@@ -16,13 +16,20 @@ class TILDetailViewController: UIViewController {
     var til: TIL!
     var tilId: Int!
     
-    var tilViewModel = TILViewModel()
-    var subjectViewModel = SubjectViewModel()
+    var tilViewModel: TILViewModel!
+    var subjectViewModel: SubjectViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        reloadData()
+    
+        _ = tilViewModel.allTIL
+            .map {
+                $0.filter { $0.id == self.tilId }
+            }
+            .subscribe(onNext: { [weak self] til in
+                self?.setLabelText(til[0])
+                self?.til = til[0]
+            })
         
         let rightBarButton = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(editButtonClicked))
         
@@ -34,18 +41,11 @@ class TILDetailViewController: UIViewController {
             return
         }
         editVC.til = til
+        editVC.tilViewModel = self.tilViewModel
+        editVC.subjectViewModel = self.subjectViewModel
+        
+        editVC.modalPresentationStyle = .overCurrentContext
         self.present(editVC, animated: true, completion: nil)
-    }
-    
-    func reloadData() {
-        _ = tilViewModel.allTIL
-            .map {
-                $0.filter { $0.id == self.tilId }
-            }
-            .subscribe(onNext: { [weak self] til in
-                self?.setLabelText(til[0])
-                self?.til = til[0]
-            })
     }
     
     func setLabelText(_ til: TIL) {

@@ -16,8 +16,9 @@ class TILTableViewController: UITableViewController {
     var selectedDate: Date!
     var selectedTilId: Int? = nil
     
-    var tilViewModel = TILViewModel()
-    var subjectViewModel = SubjectViewModel()
+    var tilViewModel: TILViewModel!
+    var subjectViewModel: SubjectViewModel!
+    
     var disposeBag = DisposeBag()
     
     var thisDayTIL: [TIL] = []
@@ -48,7 +49,11 @@ extension TILTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTilId = thisDayTIL[indexPath.row].id
         if let detailVC = storyboard?.instantiateViewController(withIdentifier: "TILDetailViewController") as? TILDetailViewController {
+            
             detailVC.tilId = selectedTilId
+            detailVC.tilViewModel = self.tilViewModel
+            detailVC.subjectViewModel = self.subjectViewModel
+            
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }

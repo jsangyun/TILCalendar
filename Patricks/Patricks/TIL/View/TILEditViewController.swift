@@ -12,8 +12,8 @@ class TILEditViewController: UIViewController {
     var til: TIL!
     var subjectName: String!
     
-    var tilViewModel = TILViewModel()
-    var subjectViewModel = SubjectViewModel()
+    var tilViewModel: TILViewModel!
+    var subjectViewModel: SubjectViewModel!
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var subjectSelectButton: UIButton!
@@ -56,13 +56,13 @@ class TILEditViewController: UIViewController {
     
     @IBAction func doneButtonClicked(_ sender: Any) {
         
-        
+        updateCurrentTil()
+        tilViewModel.updateTil(self.til)
         
         self.dismiss(animated: true) {
             guard let prevVC = self.presentingViewController as? TILDetailViewController else {
                 return
             }
-            prevVC.reloadData()
         }
     }
 
@@ -104,6 +104,11 @@ extension TILEditViewController {
             return true
         }
         return false
+    }
+    
+    func updateCurrentTil() {
+        til.title = titleTextField.text!
+        til.content = contentTextView.text!
     }
     
 }
