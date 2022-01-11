@@ -15,11 +15,9 @@ class TILEditViewController: UIViewController {
     var tilViewModel = TILViewModel()
     var subjectViewModel = SubjectViewModel()
     
-
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var subjectSelectButton: UIButton!
     @IBOutlet weak var contentTextView: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +37,7 @@ class TILEditViewController: UIViewController {
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
         if (isThereDifference()) {
-            let alert = UIAlertController(title: "알림", message: "변경사항이 있습니다!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "알림", message: "변경사항이 있습니다!", preferredStyle: .actionSheet)
             
             let defaultAction = UIAlertAction(title: "저장하지 않고 나가기", style: .destructive) { _ in
                 self.dismiss(animated: true, completion: nil)
@@ -57,7 +55,15 @@ class TILEditViewController: UIViewController {
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        
+        
+        
+        self.dismiss(animated: true) {
+            guard let prevVC = self.presentingViewController as? TILDetailViewController else {
+                return
+            }
+            prevVC.reloadData()
+        }
     }
 
     @IBAction func subjectClicked(_ sender: Any) {

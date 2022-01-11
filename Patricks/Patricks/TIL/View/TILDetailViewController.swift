@@ -21,23 +21,12 @@ class TILDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = tilViewModel.allTIL
-            .map {
-                $0.filter { $0.id == self.tilId }
-            }
-            .subscribe(onNext: { [weak self] til in
-                self?.setLabelText(til[0])
-                self?.til = til[0]
-            })
+        
+        reloadData()
         
         let rightBarButton = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(editButtonClicked))
         
         self.navigationItem.rightBarButtonItem = rightBarButton
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("detailView Will Appear")
     }
     
     @objc private func editButtonClicked(_ sender: Any) {
@@ -46,6 +35,17 @@ class TILDetailViewController: UIViewController {
         }
         editVC.til = til
         self.present(editVC, animated: true, completion: nil)
+    }
+    
+    func reloadData() {
+        _ = tilViewModel.allTIL
+            .map {
+                $0.filter { $0.id == self.tilId }
+            }
+            .subscribe(onNext: { [weak self] til in
+                self?.setLabelText(til[0])
+                self?.til = til[0]
+            })
     }
     
     func setLabelText(_ til: TIL) {

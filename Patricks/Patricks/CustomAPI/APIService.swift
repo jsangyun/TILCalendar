@@ -25,16 +25,27 @@ class APIService {
         return date
     }
     
-    static func load<T: Decodable>(_ filename: String) -> T {
+    
+    static func load<T: Codable>(_ filename: String) -> T {
+        
         let data: Data
-        guard let url = Bundle.main.url(forResource: filename, withExtension: nil) else {
-            fatalError("Couldn't find \(filename) in main bundle.")
-        }
+        let filePath = NSHomeDirectory() + "/Documents/\(filename)"
+        let fileUrl = URL(fileURLWithPath: filePath)
         
         do {
-            try data = Data(contentsOf: url)
+            try data = Data(contentsOf: fileUrl)
         } catch {
-            fatalError("Couldn't load \(filename) from main bundle.")
+            /* when there is no json file at directory, create one */
+            print("Creating empty \(filename) to \(filePath)")
+            
+            let encoder = JSONEncoder()
+            let emptyJson: [T] = []
+            
+            if let temp = try? encoder.encode(emptyJson) {
+                try! temp.write(to: fileUrl)
+            }
+            
+            try! data = Data(contentsOf: fileUrl)
         }
         
         do {
@@ -44,4 +55,5 @@ class APIService {
             fatalError("Couldn't parse \(filename) as \(T.self).")
         }
     }
+    
 }

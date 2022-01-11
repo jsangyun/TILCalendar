@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TIL: Decodable {
+struct TIL: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id

@@ -314,7 +314,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Content" translatesAutoresizingMaskIntoConstraints="NO" id="ixz-xb-csb">
-                                <rect key="frame" x="15" y="176.5" width="384" height="675.5"/>
+                                <rect key="frame" x="15" y="176.5" width="384" height="358.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
@@ -332,8 +332,8 @@
                             <constraint firstItem="3PQ-EL-5ep" firstAttribute="top" secondItem="m8F-A6-ag4" secondAttribute="top" constant="5" id="Obu-Pz-3Z7"/>
                             <constraint firstItem="Nea-VV-bEa" firstAttribute="top" secondItem="3PQ-EL-5ep" secondAttribute="bottom" constant="10" id="Pzc-GV-1Ou"/>
                             <constraint firstItem="m8F-A6-ag4" firstAttribute="trailing" secondItem="Nea-VV-bEa" secondAttribute="trailing" constant="15" id="Tnf-at-fry"/>
+                            <constraint firstItem="ixz-xb-csb" firstAttribute="height" secondItem="l4V-os-zV8" secondAttribute="height" multiplier="0.4" id="dHW-vi-Ih1"/>
                             <constraint firstItem="ixz-xb-csb" firstAttribute="top" secondItem="6ah-qE-7OT" secondAttribute="bottom" constant="10" id="gxd-On-f6o"/>
-                            <constraint firstItem="m8F-A6-ag4" firstAttribute="bottom" secondItem="ixz-xb-csb" secondAttribute="bottom" constant="10" id="tC7-ko-o40"/>
                             <constraint firstItem="3PQ-EL-5ep" firstAttribute="leading" secondItem="m8F-A6-ag4" secondAttribute="leading" id="uFJ-gY-uJj"/>
                             <constraint firstItem="6ah-qE-7OT" firstAttribute="top" secondItem="Nea-VV-bEa" secondAttribute="bottom" constant="10" id="uSw-db-na2"/>
                             <constraint firstItem="ixz-xb-csb" firstAttribute="leading" secondItem="m8F-A6-ag4" secondAttribute="leading" constant="15" id="w2M-Yt-vXc"/>

@@ -21,8 +21,6 @@
 		4441D72627609256003C13EF /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D72527609256003C13EF /* SubjectTableViewCell.swift */; };
 		4441D72827609D1B003C13EF /* SubjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D72727609D1B003C13EF /* SubjectDetailViewController.swift */; };
 		446DCCE6278AC287008601A8 /* TILEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCCE5278AC287008601A8 /* TILEditViewController.swift */; };
-		44B851C2277D8856002524DF /* til.json in Resources */ = {isa = PBXBuildFile; fileRef = 44B851C1277D8856002524DF /* til.json */; };
-		44B851C4277D8861002524DF /* subject.json in Resources */ = {isa = PBXBuildFile; fileRef = 44B851C3277D8861002524DF /* subject.json */; };
 		44B851C6277E345F002524DF /* TILTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B851C5277E345F002524DF /* TILTableViewCell.swift */; };
 		44B851C8277F1D86002524DF /* TILDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B851C7277F1D86002524DF /* TILDetailViewController.swift */; };
 		44F990CE275A01D300A75F6D /* TILViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990CD275A01D300A75F6D /* TILViewModel.swift */; };
@@ -50,8 +48,6 @@
 		4441D72527609256003C13EF /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		4441D72727609D1B003C13EF /* SubjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailViewController.swift; sourceTree = "<group>"; };
 		446DCCE5278AC287008601A8 /* TILEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILEditViewController.swift; sourceTree = "<group>"; };
-		44B851C1277D8856002524DF /* til.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = til.json; sourceTree = "<group>"; };
-		44B851C3277D8861002524DF /* subject.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = subject.json; sourceTree = "<group>"; };
 		44B851C5277E345F002524DF /* TILTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILTableViewCell.swift; sourceTree = "<group>"; };
 		44B851C7277F1D86002524DF /* TILDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILDetailViewController.swift; sourceTree = "<group>"; };
 		44F990CD275A01D300A75F6D /* TILViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILViewModel.swift; sourceTree = "<group>"; };
@@ -157,7 +153,6 @@
 		44419745271AAFE900B648DE /* Patricks */ = {
 			isa = PBXGroup;
 			children = (
-				44B851C0277D882F002524DF /* Resources */,
 				443C14D52747986E007AE994 /* App */,
 				4441D71D275F32AE003C13EF /* CustomAPI */,
 				443C14DB2747A155007AE994 /* TIL */,
@@ -172,15 +167,6 @@
 				4441D71E275F3537003C13EF /* APIService.swift */,
 			);
 			path = CustomAPI;
-			sourceTree = "<group>";
-		};
-		44B851C0277D882F002524DF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				44B851C1277D8856002524DF /* til.json */,
-				44B851C3277D8861002524DF /* subject.json */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		44F990CF275B279900A75F6D /* Subject */ = {
@@ -294,8 +280,6 @@
 				44419750271AAFEA00B648DE /* Assets.xcassets in Resources */,
 				443C14E22747AA1F007AE994 /* TIL.storyboard in Resources */,
 				443C14D92747A04E007AE994 /* Main.storyboard in Resources */,
-				44B851C2277D8856002524DF /* til.json in Resources */,
-				44B851C4277D8861002524DF /* subject.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,8 @@ class TILViewModel {
     var tilCount: Int = 0
     
     init() {
-        let data: [TIL] = APIService.load("til.json")
+        
+        var data: [TIL] = APIService.load("til.json")
         
         allTIL
             .onNext(data)
