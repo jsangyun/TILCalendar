@@ -9,8 +9,15 @@ import UIKit
 
 class TILEditViewController: UIViewController {
     
+    enum Mode {
+        case create
+        case edit
+    }
+    
     var til: TIL!
     var subjectName: String!
+    
+    var mode: Mode!
     
     var tilViewModel: TILViewModel!
     var subjectViewModel: SubjectViewModel!
@@ -21,8 +28,17 @@ class TILEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        subjectSelectButton.contentHorizontalAlignment = .left
         
-        fillText(til)
+        if til == nil {
+            mode = .create
+        } else {
+            mode = .edit
+        }
+        
+        if mode == .edit {
+            fillText(til)
+        }
         
         /*
         //view move upward when keyboard appears
@@ -36,8 +52,10 @@ class TILEditViewController: UIViewController {
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
-        if (isThereDifference()) {
-            let alert = UIAlertController(title: "알림", message: "변경사항이 있습니다!", preferredStyle: .actionSheet)
+        if (isThereChange()) {
+            let alert = (mode == .edit)
+            ? UIAlertController(title: "알림", message: "변경사항이 있습니다!", preferredStyle: .actionSheet)
+            : UIAlertController(title: "알림", message: "작성 내용이 있습니다!", preferredStyle: .actionSheet)
             
             let defaultAction = UIAlertAction(title: "저장하지 않고 나가기", style: .destructive) { _ in
                 self.dismiss(animated: true, completion: nil)
@@ -59,11 +77,7 @@ class TILEditViewController: UIViewController {
         updateCurrentTil()
         tilViewModel.updateTil(self.til)
         
-        self.dismiss(animated: true) {
-            guard let prevVC = self.presentingViewController as? TILDetailViewController else {
-                return
-            }
-        }
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func subjectClicked(_ sender: Any) {
@@ -94,14 +108,22 @@ extension TILEditViewController {
         
         titleTextField.text = til.title
         subjectSelectButton.setTitle(subjectName, for: .normal)
-        subjectSelectButton.contentHorizontalAlignment = .left
+        
         contentTextView.text = til.content
     }
     
     //check whether data is changed or not
-    func isThereDifference() -> Bool {
-        if (titleTextField.text != til.title) || (subjectSelectButton.titleLabel?.text != subjectName) || (contentTextView.text != til.content) {
-            return true
+    func isThereChange() -> Bool {
+        if (mode == .edit) {
+            if (titleTextField.text != til.title) || (subjectSelectButton.titleLabel?.text != subjectName) || (contentTextView.text != til.content) {
+                return true
+            }
+        }
+        else if (mode == .create) {
+            if (titleTextField.text != "") ||
+                (contentTextView.text != "") {
+                return true
+            }
         }
         return false
     }

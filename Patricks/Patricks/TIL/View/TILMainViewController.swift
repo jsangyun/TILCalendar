@@ -73,7 +73,7 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
 extension TILMainViewController {
     func setNavigationBar() {
         //Larget Title Color
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.96, green: 0.87, blue: 0.66, alpha: 1)]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)]
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
         
         //Title Text
@@ -95,8 +95,8 @@ extension TILMainViewController {
         //Color
         tilCalendar.appearance.headerTitleColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
         tilCalendar.appearance.weekdayTextColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
-        tilCalendar.appearance.selectionColor = UIColor(red: 0.59, green: 0.16, blue: 0.17, alpha: 0.8)
-        tilCalendar.appearance.todayColor = UIColor(red: 0.96, green: 0.87, blue: 0.66, alpha: 1)
+        tilCalendar.appearance.selectionColor = UIColor(red: 0.96, green: 0.87, blue: 0.66, alpha: 1)
+        tilCalendar.appearance.todayColor = UIColor(red: 0.59, green: 0.16, blue: 0.17, alpha: 0.8)
         tilCalendar.appearance.eventDefaultColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
     }
 }
