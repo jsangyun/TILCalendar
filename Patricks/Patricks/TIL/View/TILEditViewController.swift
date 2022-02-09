@@ -16,7 +16,7 @@ class TILEditViewController: UIViewController {
     
     var til: TIL!
     var subjectName: String!
-    
+    var selectedDate: Date!
     var mode: Mode!
     
     var tilViewModel: TILViewModel!
@@ -25,6 +25,7 @@ class TILEditViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var subjectSelectButton: UIButton!
     @IBOutlet weak var contentTextView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +74,13 @@ class TILEditViewController: UIViewController {
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
+        if(mode == .edit) {
+            updateCurrentTil()
+        }
         
-        updateCurrentTil()
-        tilViewModel.updateTil(self.til)
+        if(mode == .create) {
+            _ = saveCurrentTil()
+        }
         
         self.dismiss(animated: true, completion: nil)
     }
@@ -131,6 +136,18 @@ extension TILEditViewController {
     func updateCurrentTil() {
         til.title = titleTextField.text!
         til.content = contentTextView.text!
+        tilViewModel.updateTil(til)
+    }
+    
+    func saveCurrentTil() -> String {
+        guard let title = titleTextField.text else {return " "}
+        guard let content = contentTextView.text else {return " "}
+        
+        let newTIL: TIL = TIL(tilViewModel.tilCount+1, title, content, selectedDate, 0)
+        
+        tilViewModel.addTil(newTIL)
+        
+        return " "
     }
     
 }

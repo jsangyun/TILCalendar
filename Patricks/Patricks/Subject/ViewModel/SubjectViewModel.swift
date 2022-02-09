@@ -12,11 +12,11 @@ import RxCocoa
 class SubjectViewModel {
     
     var allSubjects = BehaviorSubject<[Subject]>(value: [])
-    var subjectCount: Int = 0
+    var subjectCount: Int = -1
     
     init() {
         let data: [Subject] = APIService.load("subject.json")
-        subjectCount = data.count
+        subjectCount = data.count - 1
         
         allSubjects
             .onNext(data)

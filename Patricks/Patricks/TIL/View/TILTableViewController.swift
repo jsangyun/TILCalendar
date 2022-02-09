@@ -49,6 +49,9 @@ class TILTableViewController: UITableViewController {
         guard let createVC = storyboard?.instantiateViewController(withIdentifier: "TILEditViewController") as? TILEditViewController else {return}
         
         createVC.modalPresentationStyle = .overCurrentContext
+        createVC.selectedDate = self.selectedDate
+        createVC.tilViewModel = self.tilViewModel
+        createVC.subjectViewModel = self.subjectViewModel
         self.present(createVC, animated: true, completion: nil)
     }
 }
@@ -107,24 +110,9 @@ extension TILTableViewController {
     }
     
     func addEmptyNoticeView() {
-        let emptyView = UIView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
-        let image = UIImageView(image: UIImage(named: "empty"))
-        image.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        image.center.x = emptyView.center.x
-        image.center.y = emptyView.center.y
-        
-        let message = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        message.text = "비어있어요!"
-        message.font = UIFont(name: "Menlo-Regular", size: 20)
-        message.textColor = UIColor.black.withAlphaComponent(0.85)
-        message.sizeToFit()
-        message.center.x = emptyView.center.x * 1.025
-        message.center.y = emptyView.center.y * 1.85
-        
-        emptyView.addSubview(image)
-        emptyView.addSubview(message)
+        let emptyView = EmptyNoticeView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
         emptyView.center.x = self.view.center.x
-        emptyView.center.y = self.view.center.y * 0.7
+        emptyView.center.y = self.view.center.y * 0.77
         self.view.addSubview(emptyView)
     }
 }

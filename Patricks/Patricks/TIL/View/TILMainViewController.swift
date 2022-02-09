@@ -12,8 +12,8 @@ import FSCalendar
 
 class TILMainViewController: UIViewController {
     
-    var tilViewModel = TILViewModel()
-    var subjectViewModel = SubjectViewModel()
+    var tilViewModel = AppMainViewController.tilViewModel
+    var subjectViewModel = AppMainViewController.subjectViewModel
     
     let disposeBag = DisposeBag()
     

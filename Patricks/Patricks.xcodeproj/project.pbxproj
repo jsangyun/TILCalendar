@@ -17,12 +17,15 @@
 		44419753271AAFEA00B648DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44419751271AAFEA00B648DE /* LaunchScreen.storyboard */; };
 		4441D71F275F3537003C13EF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D71E275F3537003C13EF /* APIService.swift */; };
 		4441D72227608D7D003C13EF /* SubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D72127608D7D003C13EF /* SubjectViewModel.swift */; };
-		4441D72427608E25003C13EF /* SubjectMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D72327608E25003C13EF /* SubjectMainViewController.swift */; };
 		4441D72627609256003C13EF /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D72527609256003C13EF /* SubjectTableViewCell.swift */; };
-		4441D72827609D1B003C13EF /* SubjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441D72727609D1B003C13EF /* SubjectDetailViewController.swift */; };
 		446DCCE6278AC287008601A8 /* TILEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCCE5278AC287008601A8 /* TILEditViewController.swift */; };
+		446DCCEA278FF922008601A8 /* SubjectDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCCE9278FF922008601A8 /* SubjectDetailTableViewController.swift */; };
+		446DCCEC278FFC60008601A8 /* EmptyNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCCEB278FFC60008601A8 /* EmptyNoticeView.swift */; };
+		446DCCF027915DC8008601A8 /* AppMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCCEF27915DC8008601A8 /* AppMainViewController.swift */; };
 		44B851C6277E345F002524DF /* TILTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B851C5277E345F002524DF /* TILTableViewCell.swift */; };
 		44B851C8277F1D86002524DF /* TILDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B851C7277F1D86002524DF /* TILDetailViewController.swift */; };
+		44F0450D27B37C1700C2D222 /* SubjectMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */; };
+		44F0450F27B3DCC500C2D222 /* SubjectCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0450E27B3DCC500C2D222 /* SubjectCreateViewController.swift */; };
 		44F990CE275A01D300A75F6D /* TILViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990CD275A01D300A75F6D /* TILViewModel.swift */; };
 		44F990D4275B27D000A75F6D /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990D3275B27D000A75F6D /* SubjectModel.swift */; };
 		44F990D6275B32FF00A75F6D /* Subject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F990D5275B32FF00A75F6D /* Subject.storyboard */; };
@@ -44,12 +47,15 @@
 		4441D71E275F3537003C13EF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		4441D72027606BD9003C13EF /* RxSwiftPractice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPractice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4441D72127608D7D003C13EF /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
-		4441D72327608E25003C13EF /* SubjectMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectMainViewController.swift; sourceTree = "<group>"; };
 		4441D72527609256003C13EF /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
-		4441D72727609D1B003C13EF /* SubjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailViewController.swift; sourceTree = "<group>"; };
 		446DCCE5278AC287008601A8 /* TILEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILEditViewController.swift; sourceTree = "<group>"; };
+		446DCCE9278FF922008601A8 /* SubjectDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailTableViewController.swift; sourceTree = "<group>"; };
+		446DCCEB278FFC60008601A8 /* EmptyNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNoticeView.swift; sourceTree = "<group>"; };
+		446DCCEF27915DC8008601A8 /* AppMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainViewController.swift; sourceTree = "<group>"; };
 		44B851C5277E345F002524DF /* TILTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILTableViewCell.swift; sourceTree = "<group>"; };
 		44B851C7277F1D86002524DF /* TILDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILDetailViewController.swift; sourceTree = "<group>"; };
+		44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectMainViewController.swift; sourceTree = "<group>"; };
+		44F0450E27B3DCC500C2D222 /* SubjectCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCreateViewController.swift; sourceTree = "<group>"; };
 		44F990CD275A01D300A75F6D /* TILViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILViewModel.swift; sourceTree = "<group>"; };
 		44F990D3275B27D000A75F6D /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		44F990D5275B32FF00A75F6D /* Subject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Subject.storyboard; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 				44419748271AAFE900B648DE /* SceneDelegate.swift */,
 				44419754271AAFEA00B648DE /* Info.plist */,
 				443C14D82747A04E007AE994 /* Main.storyboard */,
+				446DCCEB278FFC60008601A8 /* EmptyNoticeView.swift */,
+				446DCCEF27915DC8008601A8 /* AppMainViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -191,9 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				44F990D5275B32FF00A75F6D /* Subject.storyboard */,
-				4441D72327608E25003C13EF /* SubjectMainViewController.swift */,
+				446DCCE9278FF922008601A8 /* SubjectDetailTableViewController.swift */,
 				4441D72527609256003C13EF /* SubjectTableViewCell.swift */,
-				4441D72727609D1B003C13EF /* SubjectDetailViewController.swift */,
+				44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */,
+				44F0450E27B3DCC500C2D222 /* SubjectCreateViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,18 +341,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4441D72427608E25003C13EF /* SubjectMainViewController.swift in Sources */,
 				44F990CE275A01D300A75F6D /* TILViewModel.swift in Sources */,
-				4441D72827609D1B003C13EF /* SubjectDetailViewController.swift in Sources */,
 				446DCCE6278AC287008601A8 /* TILEditViewController.swift in Sources */,
 				44419747271AAFE900B648DE /* AppDelegate.swift in Sources */,
+				44F0450F27B3DCC500C2D222 /* SubjectCreateViewController.swift in Sources */,
+				446DCCEA278FF922008601A8 /* SubjectDetailTableViewController.swift in Sources */,
 				4441D72227608D7D003C13EF /* SubjectViewModel.swift in Sources */,
+				446DCCF027915DC8008601A8 /* AppMainViewController.swift in Sources */,
+				44F0450D27B37C1700C2D222 /* SubjectMainViewController.swift in Sources */,
 				44B851C8277F1D86002524DF /* TILDetailViewController.swift in Sources */,
 				44B851C6277E345F002524DF /* TILTableViewCell.swift in Sources */,
 				44F990D4275B27D000A75F6D /* SubjectModel.swift in Sources */,
 				443C14E42747AC0F007AE994 /* TILMainViewController.swift in Sources */,
 				4441D72627609256003C13EF /* SubjectTableViewCell.swift in Sources */,
 				44419749271AAFE900B648DE /* SceneDelegate.swift in Sources */,
+				446DCCEC278FFC60008601A8 /* EmptyNoticeView.swift in Sources */,
 				44F990D8275DE8DA00A75F6D /* TILTableViewController.swift in Sources */,
 				4441D71F275F3537003C13EF /* APIService.swift in Sources */,
 				443C14E62748C0D5007AE994 /* TILModel.swift in Sources */,
