@@ -27,8 +27,6 @@ class TILTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hidesBottomBarWhenPushed = true
-        
         setNavigationBar()
         
         let emptyView = EmptyNoticeView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
@@ -48,6 +46,8 @@ class TILTableViewController: UITableViewController {
                 
                 if (!tils.isEmpty) {
                     emptyView.isHidden = true
+                } else {
+                    emptyView.isHidden = false
                 }
                 
             })
@@ -58,19 +58,21 @@ class TILTableViewController: UITableViewController {
     @objc func createButtonClicked() {
         guard let createVC = storyboard?.instantiateViewController(withIdentifier: "TILEditViewController") as? TILEditViewController else {return}
         
-        createVC.modalPresentationStyle = .overCurrentContext
+        createVC.modalPresentationStyle = .overFullScreen
         createVC.selectedDate = self.selectedDate
         createVC.tilViewModel = self.tilViewModel
         createVC.subjectViewModel = self.subjectViewModel
-        self.hidesBottomBarWhenPushed = true
+        
         self.present(createVC, animated: true, completion: nil)
     }
 }
 
+//TableView 코드
 extension TILTableViewController {
     
     //row select event
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         selectedTilId = thisDayTIL[indexPath.row].id
         if let detailVC = storyboard?.instantiateViewController(withIdentifier: "TILDetailViewController") as? TILDetailViewController {
             
@@ -80,6 +82,7 @@ extension TILTableViewController {
             
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
+        
     }
     
     //number of row per section
@@ -97,6 +100,18 @@ extension TILTableViewController {
         cell.subjectNameLabel.text = subjectViewModel.getSubjectNameById(data.subjectId)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // 스와이프 삭제
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            tilViewModel.deleteTil(thisDayTIL[indexPath.row].id)
+        }
     }
 }
 

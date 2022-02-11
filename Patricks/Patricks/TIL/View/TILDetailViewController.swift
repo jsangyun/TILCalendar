@@ -48,7 +48,7 @@ class TILDetailViewController: UIViewController {
         editVC.tilViewModel = self.tilViewModel
         editVC.subjectViewModel = self.subjectViewModel
         
-        editVC.modalPresentationStyle = .overCurrentContext
+        editVC.modalPresentationStyle = .overFullScreen
         self.present(editVC, animated: true, completion: nil)
     }
     

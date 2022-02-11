@@ -54,12 +54,12 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
         var events: [String] = []
         
         _ = tilViewModel.allTIL
-            .take(1)
             .subscribe(onNext:{
                 $0.forEach {
                     events.append($0.createdDate)
                 }
             })
+            .disposed(by: disposeBag)
         
         if events.contains(APIService.formatDateToString(date)) {
             return 1

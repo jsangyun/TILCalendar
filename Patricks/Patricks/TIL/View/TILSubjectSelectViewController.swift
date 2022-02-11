@@ -20,9 +20,10 @@ class TILSubjectSelectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hidesBottomBarWhenPushed = true
+        
         subjectPickerView.delegate = self
         subjectPickerView.dataSource = self
+        
     }
     
     @IBAction func doneButtonClicked(_ sender: UIButton) {

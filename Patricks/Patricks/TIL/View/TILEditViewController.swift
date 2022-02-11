@@ -44,7 +44,7 @@ class TILEditViewController: UIViewController {
             fillText(til)
         }
         
-        subjectObserver.bind(to: subjectSelectButton.rx.title())
+        _ = subjectObserver.bind(to: subjectSelectButton.rx.title())
         
         titleTextField.becomeFirstResponder()
     }
@@ -71,6 +71,15 @@ class TILEditViewController: UIViewController {
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
+        
+        if subjectSelectButton.titleLabel?.text == "과목 선택" {
+            let alert = UIAlertController(title: "", message: "과목을 선택해주세요!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "돌아가기", style: .cancel, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         if(mode == .edit) {
             updateCurrentTil()
         }
@@ -88,6 +97,12 @@ class TILEditViewController: UIViewController {
         subjectVC.modalPresentationStyle = .overCurrentContext
         self.present(subjectVC, animated: true, completion: nil)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        guard let parentVC = parent as? TILTableViewController else {return}
+        parentVC.hidesBottomBarWhenPushed = false
+    }
+    
 }
 
 extension TILEditViewController {
@@ -122,12 +137,11 @@ extension TILEditViewController {
         til.title = titleTextField.text!
         til.content = contentTextView.text!
         til.subjectId = selectedSubjectId
-        print(til)
         tilViewModel.updateTil(til)
     }
     
     func saveCurrentTil() {
-        let newTIL: TIL = TIL(tilViewModel.tilCount+1, titleTextField.text!, contentTextView.text!, selectedDate, 0)
+        let newTIL: TIL = TIL(tilViewModel.tilCount+1, titleTextField.text!, contentTextView.text!, selectedDate, selectedSubjectId)
         
         tilViewModel.addTil(newTIL)
     }

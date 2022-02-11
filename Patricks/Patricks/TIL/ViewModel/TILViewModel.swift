@@ -53,7 +53,7 @@ class TILViewModel {
     }
     
     func updateTil(_ til: TIL) {
-        print(til)
+        
         _ = allTIL
             .map {$0.filter{$0.id != til.id}}
             .take(1)
@@ -62,6 +62,17 @@ class TILViewModel {
                 let newData: [TIL] = $0 + [til]
                 APIService.save("til.json", newData)
                 self.allTIL.onNext(newData)
+            })
+    }
+    
+    func deleteTil(_ tilId: Int) {
+        _ = allTIL
+            .map {$0.filter{$0.id != tilId}}
+            .take(1)
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: {
+                APIService.save("til.json", $0)
+                self.allTIL.onNext($0)
             })
     }
 
