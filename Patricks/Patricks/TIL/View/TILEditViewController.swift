@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TILEditViewController: UIViewController {
     
@@ -15,17 +17,18 @@ class TILEditViewController: UIViewController {
     }
     
     var til: TIL!
-    var subjectName: String!
+    var selectedSubjectId: Int!
     var selectedDate: Date!
     var mode: Mode!
     
     var tilViewModel: TILViewModel!
     var subjectViewModel: SubjectViewModel!
+    var subjectObserver = BehaviorSubject<String>(value: "과목 선택")
+    var disposeBag = DisposeBag()
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var subjectSelectButton: UIButton!
     @IBOutlet weak var contentTextView: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,14 +44,8 @@ class TILEditViewController: UIViewController {
             fillText(til)
         }
         
-        /*
-        //view move upward when keyboard appears
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        subjectObserver.bind(to: subjectSelectButton.rx.title())
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        contentTextView.addDoneButtonToKeyboard()
-         */
         titleTextField.becomeFirstResponder()
     }
     
@@ -79,48 +76,36 @@ class TILEditViewController: UIViewController {
         }
         
         if(mode == .create) {
-            _ = saveCurrentTil()
+            saveCurrentTil()
         }
         
         self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func subjectClicked(_ sender: Any) {
+        guard let subjectVC = storyboard?.instantiateViewController(withIdentifier: "TILSubjectSelectViewController") as? TILSubjectSelectViewController else {return}
+        
+        subjectVC.modalPresentationStyle = .overCurrentContext
+        self.present(subjectVC, animated: true, completion: nil)
     }
-    
-    /*
-    @objc func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
-//        contentTextView.frame.origin.y -= keyboardSize.height
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
-//        contentTextView.frame.origin.y += keyboardSize.height
-    }
-    */
 }
 
 extension TILEditViewController {
     
     //fill data to textview / textfield
     func fillText(_ til: TIL) {
-        subjectName = subjectViewModel.getSubjectNameById(til.subjectId)
+        
+        subjectObserver.onNext(subjectViewModel.getSubjectNameById(til.subjectId))
         
         titleTextField.text = til.title
-        subjectSelectButton.setTitle(subjectName, for: .normal)
-        
         contentTextView.text = til.content
+        selectedSubjectId = til.subjectId
     }
     
     //check whether data is changed or not
     func isThereChange() -> Bool {
         if (mode == .edit) {
-            if (titleTextField.text != til.title) || (subjectSelectButton.titleLabel?.text != subjectName) || (contentTextView.text != til.content) {
+            if (titleTextField.text != til.title) || (subjectSelectButton.titleLabel?.text != subjectViewModel.getSubjectNameById(til.subjectId)) || (contentTextView.text != til.content) {
                 return true
             }
         }
@@ -136,18 +121,15 @@ extension TILEditViewController {
     func updateCurrentTil() {
         til.title = titleTextField.text!
         til.content = contentTextView.text!
+        til.subjectId = selectedSubjectId
+        print(til)
         tilViewModel.updateTil(til)
     }
     
-    func saveCurrentTil() -> String {
-        guard let title = titleTextField.text else {return " "}
-        guard let content = contentTextView.text else {return " "}
-        
-        let newTIL: TIL = TIL(tilViewModel.tilCount+1, title, content, selectedDate, 0)
+    func saveCurrentTil() {
+        let newTIL: TIL = TIL(tilViewModel.tilCount+1, titleTextField.text!, contentTextView.text!, selectedDate, 0)
         
         tilViewModel.addTil(newTIL)
-        
-        return " "
     }
     
 }

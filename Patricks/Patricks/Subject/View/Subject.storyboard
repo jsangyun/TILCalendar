@@ -85,10 +85,81 @@
             </objects>
             <point key="canvasLocation" x="1667" y="25"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Subject Create View Controller-->
+        <scene sceneID="dlH-Mf-y5C">
+            <objects>
+                <viewController storyboardIdentifier="SubjectCreateViewController" id="aHe-pn-La7" customClass="SubjectCreateViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3pL-9B-Rec">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book.closed" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="syo-Rx-OhW">
+                                <rect key="frame" x="57" y="283.5" width="300" height="150"/>
+                                <color key="tintColor" red="0.60000002379999995" green="0.66666668650000005" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="8RM-Eg-XoP"/>
+                                    <constraint firstAttribute="width" constant="300" id="aSK-yC-Vpz"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="과목 이름" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-DW-TqH">
+                                <rect key="frame" x="57" y="453.5" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="oCt-zy-Cr2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="YVi-kI-LIM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2a-p1-RDO">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="45"/>
+                                        <color key="tintColor" red="0.37647059560000001" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                        <connections>
+                                            <action selector="cancelButtonClicked:" destination="aHe-pn-La7" eventType="touchUpInside" id="0kB-9G-dbR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghB-zU-m09">
+                                        <rect key="frame" x="365.5" y="0.0" width="48.5" height="45"/>
+                                        <color key="tintColor" red="0.37647059560000001" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="완료"/>
+                                        <connections>
+                                            <action selector="doneButtonClicked:" destination="aHe-pn-La7" eventType="touchUpInside" id="LfO-ka-XYM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="aNz-B3-OnI"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m6Z-uL-OHL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="syo-Rx-OhW" firstAttribute="centerX" secondItem="3pL-9B-Rec" secondAttribute="centerX" id="A7C-wn-Wjd"/>
+                            <constraint firstItem="YVi-kI-LIM" firstAttribute="leading" secondItem="m6Z-uL-OHL" secondAttribute="leading" id="GBa-KQ-t7f"/>
+                            <constraint firstItem="Qgd-DW-TqH" firstAttribute="top" secondItem="syo-Rx-OhW" secondAttribute="bottom" constant="20" id="GuB-Bg-AC0"/>
+                            <constraint firstItem="YVi-kI-LIM" firstAttribute="top" secondItem="m6Z-uL-OHL" secondAttribute="top" id="VDX-LZ-CAM"/>
+                            <constraint firstItem="Qgd-DW-TqH" firstAttribute="centerX" secondItem="3pL-9B-Rec" secondAttribute="centerX" id="XxO-SQ-1bO"/>
+                            <constraint firstItem="m6Z-uL-OHL" firstAttribute="trailing" secondItem="YVi-kI-LIM" secondAttribute="trailing" id="eaZ-UA-YVu"/>
+                            <constraint firstItem="syo-Rx-OhW" firstAttribute="centerY" secondItem="3pL-9B-Rec" secondAttribute="centerY" multiplier="0.8" id="ghJ-np-wHA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="subjectNameTextField" destination="Qgd-DW-TqH" id="g9Q-3W-sRJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4bc-Nx-TyD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1667" y="691"/>
+        </scene>
+        <!--Subject Detail Table View Controller-->
         <scene sceneID="ryS-rv-hNR">
             <objects>
-                <tableViewController id="JBJ-R5-C5t" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SubjectDetailTableViewController" id="JBJ-R5-C5t" customClass="SubjectDetailTableViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="NXZ-kH-U6x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +179,7 @@
                             <outlet property="delegate" destination="JBJ-R5-C5t" id="7Hs-PU-iJv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dii-ux-raK"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="dii-ux-raK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YL5-LO-79g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,6 +208,7 @@
     </scenes>
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
+        <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

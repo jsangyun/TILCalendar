@@ -26,6 +26,7 @@
 		44B851C8277F1D86002524DF /* TILDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B851C7277F1D86002524DF /* TILDetailViewController.swift */; };
 		44F0450D27B37C1700C2D222 /* SubjectMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */; };
 		44F0450F27B3DCC500C2D222 /* SubjectCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0450E27B3DCC500C2D222 /* SubjectCreateViewController.swift */; };
+		44F0451127B4DBAE00C2D222 /* TILSubjectSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0451027B4DBAE00C2D222 /* TILSubjectSelectViewController.swift */; };
 		44F990CE275A01D300A75F6D /* TILViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990CD275A01D300A75F6D /* TILViewModel.swift */; };
 		44F990D4275B27D000A75F6D /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990D3275B27D000A75F6D /* SubjectModel.swift */; };
 		44F990D6275B32FF00A75F6D /* Subject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F990D5275B32FF00A75F6D /* Subject.storyboard */; };
@@ -56,6 +57,7 @@
 		44B851C7277F1D86002524DF /* TILDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILDetailViewController.swift; sourceTree = "<group>"; };
 		44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectMainViewController.swift; sourceTree = "<group>"; };
 		44F0450E27B3DCC500C2D222 /* SubjectCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCreateViewController.swift; sourceTree = "<group>"; };
+		44F0451027B4DBAE00C2D222 /* TILSubjectSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILSubjectSelectViewController.swift; sourceTree = "<group>"; };
 		44F990CD275A01D300A75F6D /* TILViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILViewModel.swift; sourceTree = "<group>"; };
 		44F990D3275B27D000A75F6D /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		44F990D5275B32FF00A75F6D /* Subject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Subject.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				44B851C5277E345F002524DF /* TILTableViewCell.swift */,
 				44B851C7277F1D86002524DF /* TILDetailViewController.swift */,
 				446DCCE5278AC287008601A8 /* TILEditViewController.swift */,
+				44F0451027B4DBAE00C2D222 /* TILSubjectSelectViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				4441D72227608D7D003C13EF /* SubjectViewModel.swift in Sources */,
 				446DCCF027915DC8008601A8 /* AppMainViewController.swift in Sources */,
 				44F0450D27B37C1700C2D222 /* SubjectMainViewController.swift in Sources */,
+				44F0451127B4DBAE00C2D222 /* TILSubjectSelectViewController.swift in Sources */,
 				44B851C8277F1D86002524DF /* TILDetailViewController.swift in Sources */,
 				44B851C6277E345F002524DF /* TILTableViewCell.swift in Sources */,
 				44F990D4275B27D000A75F6D /* SubjectModel.swift in Sources */,

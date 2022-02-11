@@ -29,6 +29,12 @@ class TILTableViewController: UITableViewController {
         
         setNavigationBar()
         
+        let emptyView = EmptyNoticeView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
+        emptyView.center.x = self.view.center.x
+        emptyView.center.y = self.view.center.y * 0.77
+        tableView.isScrollEnabled = false
+        view.addSubview(emptyView)
+        
         _ = tilViewModel.allTIL
             .observe(on: MainScheduler.instance)
             .map{
@@ -37,12 +43,14 @@ class TILTableViewController: UITableViewController {
             .subscribe(onNext: { [weak self] tils in
                 self?.thisDayTIL = tils
                 self?.tilTableView.reloadData()
+                
+                if (!tils.isEmpty) {
+                    emptyView.isHidden = true
+                }
+                
             })
             .disposed(by: disposeBag)
         
-        if (thisDayTIL.isEmpty) {
-            addEmptyNoticeView()
-        }
     }
     
     @objc func createButtonClicked() {
@@ -107,12 +115,5 @@ extension TILTableViewController {
         let createButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createButtonClicked))
         
         self.navigationItem.rightBarButtonItem = createButton
-    }
-    
-    func addEmptyNoticeView() {
-        let emptyView = EmptyNoticeView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
-        emptyView.center.x = self.view.center.x
-        emptyView.center.y = self.view.center.y * 0.77
-        self.view.addSubview(emptyView)
     }
 }

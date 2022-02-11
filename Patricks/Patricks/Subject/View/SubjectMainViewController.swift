@@ -11,10 +11,11 @@ import RxSwift
 class SubjectMainViewController: UIViewController {
     
     var subjectViewModel = AppMainViewController.subjectViewModel
+    var tilViewModel = AppMainViewController.tilViewModel
+    
     var disposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var createButton: UIButton!
     
     var allSubjects: [Subject] = []
@@ -27,18 +28,23 @@ class SubjectMainViewController: UIViewController {
         
         setNavigationBar()
         
+        let emptyView = EmptyNoticeView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
+        emptyView.center.x = self.view.center.x
+        emptyView.center.y = self.view.center.y * 0.95
+        tableView.isScrollEnabled = false
+        view.addSubview(emptyView)
+        
         createButton.layer.cornerRadius = 30
         
         _ = subjectViewModel.allSubjects
             .subscribe(onNext: { [weak self] subjects in
                 self?.allSubjects = subjects
                 self?.tableView.reloadData()
+                
+                if !subjects.isEmpty {
+                    emptyView.isHidden = true
+                }
             })
-        
-        if allSubjects.isEmpty {
-            addEmptyNoticeView()
-            tableView.isScrollEnabled = false
-        }
         
     }
     
@@ -63,7 +69,6 @@ extension SubjectMainViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
 
 extension SubjectMainViewController {
@@ -81,12 +86,11 @@ extension SubjectMainViewController {
     
     @IBAction func createButtonClicked() {
         
-    }
-    
-    func addEmptyNoticeView() {
-        let emptyView = EmptyNoticeView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
-        emptyView.center.x = self.view.center.x
-        emptyView.center.y = self.view.center.y * 0.95
-        self.view.addSubview(emptyView)
+        guard let createVC = storyboard?.instantiateViewController(withIdentifier: "SubjectCreateViewController") as? SubjectCreateViewController else {return}
+        
+        createVC.modalPresentationStyle = .overCurrentContext
+        createVC.subjectViewModel = self.subjectViewModel
+        
+        self.present(createVC, animated: true, completion: nil)
     }
 }

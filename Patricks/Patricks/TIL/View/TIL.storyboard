@@ -215,7 +215,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgr-4f-Y23">
-                                <rect key="frame" x="15" y="185.5" width="384" height="35"/>
+                                <rect key="frame" x="15" y="140.5" width="384" height="35"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -227,39 +227,28 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="rDo-EH-M9p">
-                                <rect key="frame" x="15" y="230.5" width="384" height="358.5"/>
+                                <rect key="frame" x="15" y="185.5" width="384" height="358.5"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdN-Hs-4Za">
-                                <rect key="frame" x="15" y="140.5" width="384" height="35"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="날짜 선택">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oww-Nb-9Q6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rdN-Hs-4Za" firstAttribute="leading" secondItem="oww-Nb-9Q6" secondAttribute="leading" constant="15" id="01p-Hm-Rbn"/>
                             <constraint firstItem="rDo-EH-M9p" firstAttribute="leading" secondItem="oww-Nb-9Q6" secondAttribute="leading" constant="15" id="4ee-lX-LPj"/>
                             <constraint firstItem="Kgr-4f-Y23" firstAttribute="leading" secondItem="oww-Nb-9Q6" secondAttribute="leading" constant="15" id="6f9-58-IeQ"/>
                             <constraint firstItem="KWl-Z3-s8u" firstAttribute="top" secondItem="3MA-ha-KWB" secondAttribute="bottom" constant="10" id="7qY-DG-rLH"/>
                             <constraint firstItem="rDo-EH-M9p" firstAttribute="top" secondItem="Kgr-4f-Y23" secondAttribute="bottom" constant="10" id="FRr-wx-IQ8"/>
                             <constraint firstItem="3MA-ha-KWB" firstAttribute="leading" secondItem="oww-Nb-9Q6" secondAttribute="leading" id="HAc-jZ-OH2"/>
                             <constraint firstItem="oww-Nb-9Q6" firstAttribute="trailing" secondItem="KWl-Z3-s8u" secondAttribute="trailing" constant="15" id="Jl6-wh-biZ"/>
-                            <constraint firstItem="rdN-Hs-4Za" firstAttribute="top" secondItem="KWl-Z3-s8u" secondAttribute="bottom" constant="10" id="MSP-TP-XAN"/>
                             <constraint firstItem="rDo-EH-M9p" firstAttribute="height" secondItem="2hI-4m-N83" secondAttribute="height" multiplier="0.400112" id="aGw-jj-zWl"/>
                             <constraint firstItem="oww-Nb-9Q6" firstAttribute="trailing" secondItem="rDo-EH-M9p" secondAttribute="trailing" constant="15" id="fVT-49-JeD"/>
                             <constraint firstItem="oww-Nb-9Q6" firstAttribute="trailing" secondItem="3MA-ha-KWB" secondAttribute="trailing" id="lNK-2n-S4H"/>
+                            <constraint firstItem="Kgr-4f-Y23" firstAttribute="top" secondItem="KWl-Z3-s8u" secondAttribute="bottom" constant="10" id="lk9-hE-reT"/>
                             <constraint firstItem="3MA-ha-KWB" firstAttribute="top" secondItem="oww-Nb-9Q6" secondAttribute="top" id="nqW-l2-B5T"/>
                             <constraint firstItem="KWl-Z3-s8u" firstAttribute="leading" secondItem="oww-Nb-9Q6" secondAttribute="leading" constant="15" id="u7K-jo-AeC"/>
                             <constraint firstItem="oww-Nb-9Q6" firstAttribute="trailing" secondItem="Kgr-4f-Y23" secondAttribute="trailing" constant="15" id="uVC-KS-4DA"/>
-                            <constraint firstItem="Kgr-4f-Y23" firstAttribute="top" secondItem="rdN-Hs-4Za" secondAttribute="bottom" constant="10" id="vUI-Tk-TOr"/>
-                            <constraint firstItem="oww-Nb-9Q6" firstAttribute="trailing" secondItem="rdN-Hs-4Za" secondAttribute="trailing" constant="15" id="zv6-7J-ZMu"/>
                         </constraints>
                     </view>
                     <connections>
@@ -271,6 +260,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ay3-YE-0k4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3162" y="84"/>
+        </scene>
+        <!--Subject Select View Controller-->
+        <scene sceneID="1Xy-jY-zjW">
+            <objects>
+                <viewController storyboardIdentifier="TILSubjectSelectViewController" id="Cbu-04-hJQ" customClass="TILSubjectSelectViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K35-s6-vgR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efJ-f6-654">
+                                <rect key="frame" x="47" y="295" width="320" height="216"/>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dfT-9C-OFW">
+                                <rect key="frame" x="107" y="526" width="200" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rL-K6-H3D">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
+                                        <color key="tintColor" red="0.37647059560000001" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                        <connections>
+                                            <action selector="cancelButtonClicked:" destination="Cbu-04-hJQ" eventType="touchUpInside" id="Nbk-9c-bpg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-q3-zTI">
+                                        <rect key="frame" x="151.5" y="0.0" width="48.5" height="30"/>
+                                        <color key="tintColor" red="0.37647059560000001" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="완료"/>
+                                        <connections>
+                                            <action selector="doneButtonClicked:" destination="Cbu-04-hJQ" eventType="touchUpInside" id="ijM-Mx-eUI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7ie-zS-Odd"/>
+                                    <constraint firstAttribute="height" constant="30" id="t97-X4-xvZ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OAY-uj-TNk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dfT-9C-OFW" firstAttribute="centerX" secondItem="K35-s6-vgR" secondAttribute="centerX" id="Cjx-4j-El5"/>
+                            <constraint firstItem="dfT-9C-OFW" firstAttribute="top" secondItem="efJ-f6-654" secondAttribute="bottom" constant="15" id="NJ5-JF-U4H"/>
+                            <constraint firstItem="efJ-f6-654" firstAttribute="centerX" secondItem="K35-s6-vgR" secondAttribute="centerX" id="Qpq-EA-oCh"/>
+                            <constraint firstItem="efJ-f6-654" firstAttribute="centerY" secondItem="K35-s6-vgR" secondAttribute="centerY" multiplier="0.9" id="yAd-lO-7BD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="subjectPickerView" destination="efJ-f6-654" id="VgZ-Ls-ca6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jY3-8v-ye5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3884" y="84"/>
         </scene>
         <!--TIL-->
         <scene sceneID="u9c-EE-IMT">

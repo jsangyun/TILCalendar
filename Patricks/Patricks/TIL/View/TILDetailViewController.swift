@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class TILDetailViewController: UIViewController {
     
@@ -18,6 +19,8 @@ class TILDetailViewController: UIViewController {
     
     var tilViewModel: TILViewModel!
     var subjectViewModel: SubjectViewModel!
+    
+    var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,7 @@ class TILDetailViewController: UIViewController {
                 self?.setLabelText(til[0])
                 self?.til = til[0]
             })
+            .disposed(by: disposeBag)
         
         let rightBarButton = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(editButtonClicked))
         
