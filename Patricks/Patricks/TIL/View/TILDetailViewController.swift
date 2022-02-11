@@ -21,13 +21,13 @@ class TILDetailViewController: UIViewController {
     var subjectViewModel: SubjectViewModel!
     
     var disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         _ = tilViewModel.allTIL
-            .map {
-                $0.filter { $0.id == self.tilId }
+            .map { [weak self] in
+                $0.filter { $0.id == self?.tilId }
             }
             .subscribe(onNext: { [weak self] til in
                 self?.setLabelText(til[0])
@@ -38,6 +38,10 @@ class TILDetailViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(editButtonClicked))
         
         self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    deinit {
+        print("DetailVC deinitialized")
     }
     
     @objc private func editButtonClicked(_ sender: Any) {

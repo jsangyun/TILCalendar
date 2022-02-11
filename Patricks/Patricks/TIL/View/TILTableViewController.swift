@@ -74,6 +74,7 @@ extension TILTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedTilId = thisDayTIL[indexPath.row].id
+        
         if let detailVC = storyboard?.instantiateViewController(withIdentifier: "TILDetailViewController") as? TILDetailViewController {
             
             detailVC.tilId = selectedTilId
