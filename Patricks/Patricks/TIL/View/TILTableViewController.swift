@@ -27,6 +27,8 @@ class TILTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hidesBottomBarWhenPushed = true
+        
         setNavigationBar()
         
         let emptyView = EmptyNoticeView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
@@ -60,6 +62,7 @@ class TILTableViewController: UITableViewController {
         createVC.selectedDate = self.selectedDate
         createVC.tilViewModel = self.tilViewModel
         createVC.subjectViewModel = self.subjectViewModel
+        self.hidesBottomBarWhenPushed = true
         self.present(createVC, animated: true, completion: nil)
     }
 }
