@@ -75,5 +75,18 @@ class TILViewModel {
                 self.allTIL.onNext($0)
             })
     }
+    
+    func getTILBySubjectId(_ subjectId: Int) -> [TIL] {
+        var tils: [TIL] = []
+        
+        _ = allTIL
+            .map{$0.filter{$0.subjectId == subjectId}}
+            .take(1)
+            .subscribe(onNext: {
+                tils = $0.sorted(by: {$0.createdDate > $1.createdDate})
+            })
+            
+        return tils
+    }
 
 }

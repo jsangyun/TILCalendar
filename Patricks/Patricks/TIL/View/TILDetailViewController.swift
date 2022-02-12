@@ -40,10 +40,6 @@ class TILDetailViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
-    deinit {
-        print("DetailVC deinitialized")
-    }
-    
     @objc private func editButtonClicked(_ sender: Any) {
         guard let editVC = storyboard?.instantiateViewController(withIdentifier: "TILEditViewController") as? TILEditViewController else {
             return

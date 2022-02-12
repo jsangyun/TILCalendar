@@ -11,7 +11,6 @@ import RxSwift
 class SubjectMainViewController: UIViewController {
     
     var subjectViewModel = AppMainViewController.subjectViewModel
-    var tilViewModel = AppMainViewController.tilViewModel
     
     var disposeBag = DisposeBag()
     
@@ -38,14 +37,13 @@ class SubjectMainViewController: UIViewController {
         
         _ = subjectViewModel.allSubjects
             .subscribe(onNext: { [weak self] subjects in
-                self?.allSubjects = subjects
+                self?.allSubjects = subjects.sorted(by: {$0.id < $1.id})
                 self?.tableView.reloadData()
                 
                 if !subjects.isEmpty {
                     emptyView.isHidden = true
                 }
             })
-        
     }
     
 }
@@ -67,6 +65,15 @@ extension SubjectMainViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "SubjectDetailTableViewController") as? SubjectDetailTableViewController else {return}
+        
+        let item = allSubjects[indexPath.row]
+        
+        detailVC.subjectId = item.id
+        detailVC.subjectName = item.name
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
 }
