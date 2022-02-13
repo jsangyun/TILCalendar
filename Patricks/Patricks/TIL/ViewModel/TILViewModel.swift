@@ -100,6 +100,7 @@ class TILViewModel {
             .subscribe(onNext: {
                 APIService.save("til.json", $0)
                 self.allTIL.onNext($0)
+                self.tilCount = $0.count
             })
     }
 

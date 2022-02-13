@@ -86,7 +86,6 @@ extension SubjectMainViewController: UITableViewDelegate, UITableViewDataSource 
             let alert = UIAlertController(title: "경고!", message: "삭제하실 과목의 TIL들이 모두 삭제됩니다!", preferredStyle: .actionSheet)
             
             let deleteAction = UIAlertAction(title: "삭제하기", style: .destructive) { _ in
-                print(indexPath.row)
                 self.subjectViewModel.deleteSubject(indexPath.row)
                 AppMainViewController.tilViewModel.deleteTilBySubjectId(indexPath.row)
             }

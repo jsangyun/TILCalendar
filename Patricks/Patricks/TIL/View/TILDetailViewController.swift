@@ -30,8 +30,13 @@ class TILDetailViewController: UIViewController {
                 $0.filter { $0.id == self?.tilId }
             }
             .subscribe(onNext: { [weak self] til in
-                self?.setLabelText(til[0])
-                self?.til = til[0]
+                if til.isEmpty {
+                    self?.navigationController?.popViewController(animated: true)
+                } else {
+                    self?.setLabelText(til[0])
+                    self?.til = til[0]
+                    
+                }
             })
             .disposed(by: disposeBag)
         
