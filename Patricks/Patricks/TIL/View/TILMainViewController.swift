@@ -23,13 +23,15 @@ class TILMainViewController: UIViewController {
         super.viewDidLoad()
         
         setNavigationBar()
-        setDelegate()
+        
+        tilCalendar.dataSource = self
+        tilCalendar.delegate = self
+        
         setCalendarAppearance()
     }
     
-    func setDelegate() {
-        tilCalendar.dataSource = self
-        tilCalendar.delegate = self
+    override func viewWillAppear(_ animated: Bool) {
+        tilCalendar.reloadData()
     }
 }
 

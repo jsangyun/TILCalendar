@@ -66,13 +66,19 @@ class SubjectDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let tilDetailVC = UIStoryboard(name: "TIL", bundle: nil).instantiateViewController(withIdentifier: "TILDetailViewController") as? TILDetailViewController else {return}
         
-        print(indexPath.row)
         tilDetailVC.tilId = tils[indexPath.row].id
         tilDetailVC.tilViewModel = tilViewModel
         tilDetailVC.subjectViewModel = AppMainViewController.subjectViewModel
         
         self.navigationController?.pushViewController(tilDetailVC, animated: true)
         
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            tilViewModel.deleteTil(tils[indexPath.row].id)
+        }
     }
 
 }

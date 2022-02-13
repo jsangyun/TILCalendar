@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class TILSubjectSelectViewController: UIViewController {
     
@@ -14,30 +15,54 @@ class TILSubjectSelectViewController: UIViewController {
     var allSubjects: [Subject] = []
     let disposeBag = DisposeBag()
     
-    var selectedSubjectId: Int = 0
+    var selectedSubjectId: Int!
 
     @IBOutlet weak var subjectPickerView: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subjectPickerView.delegate = self
-        subjectPickerView.dataSource = self
+        subjectPickerView.delegate = nil
+        subjectPickerView.dataSource = nil
+        
+        _ = subjectViewModel.allSubjects
+            .map{$0.sorted(by: {$0.id < $1.id})}
+            .bind(to: subjectPickerView.rx.itemTitles) { _, item in
+                self.selectedSubjectId = 0
+                return item.name
+        }
+        
+        _ = subjectPickerView.rx.itemSelected
+            .subscribe(onNext: { [weak self] in
+                self?.selectedSubjectId = $0.row
+            })
+            .disposed(by: disposeBag)
         
     }
     
     @IBAction func doneButtonClicked(_ sender: UIButton) {
-        guard let prevVC = self.presentingViewController as? TILEditViewController else {return}
-        prevVC.selectedSubjectId = self.selectedSubjectId
-        prevVC.subjectObserver.onNext(subjectViewModel.getSubjectNameById(self.selectedSubjectId))
+        if let id = selectedSubjectId,
+           let prevVC = self.presentingViewController as? TILEditViewController {
+            prevVC.selectedSubjectId = id
+            prevVC.subjectObserver.onNext(subjectViewModel.getSubjectNameById(id))
+        }
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func addButtonClicked(_ sender: UIButton) {
+        guard let addSubjectVC = UIStoryboard(name: "Subject", bundle: nil).instantiateViewController(withIdentifier: "SubjectCreateViewController") as? SubjectCreateViewController else {return}
+        
+        addSubjectVC.subjectViewModel = subjectViewModel
+        
+        self.present(addSubjectVC, animated: true, completion: nil)
+    }
 }
 
+/*
 extension TILSubjectSelectViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -49,15 +74,19 @@ extension TILSubjectSelectViewController: UIPickerViewDelegate, UIPickerViewData
     }
         
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         _ = subjectViewModel.allSubjects
             .subscribe(onNext: { [weak self] in
                 self?.allSubjects = $0
             })
-            .dispose()
+            .disposed(by: disposeBag)
+        
         return allSubjects[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedSubjectId = row
     }
+ 
 }
+ */

@@ -126,7 +126,8 @@ extension TILEditViewController {
         }
         else if (mode == .create) {
             if (titleTextField.text != "") ||
-                (contentTextView.text != "") {
+                (contentTextView.text != "" ||
+                 (subjectSelectButton.titleLabel?.text != "과목 선택")) {
                 return true
             }
         }
