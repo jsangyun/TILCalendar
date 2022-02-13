@@ -66,6 +66,8 @@ class TILViewModel {
     }
     
     func deleteTil(_ tilId: Int) {
+        tilCount -= 1
+        
         _ = allTIL
             .map {$0.filter{$0.id != tilId}}
             .take(1)
@@ -87,6 +89,18 @@ class TILViewModel {
             })
             
         return tils
+    }
+    
+    func deleteTilBySubjectId( _ subjectId: Int) {
+        
+        _ = allTIL
+            .take(1)
+            .map{$0.filter{$0.subjectId != subjectId}}
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: {
+                APIService.save("til.json", $0)
+                self.allTIL.onNext($0)
+            })
     }
 
 }

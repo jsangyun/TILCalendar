@@ -49,4 +49,17 @@ class SubjectViewModel {
                 self.allSubjects.onNext(newData)
             })
     }
+    
+    func deleteSubject(_ subjectId: Int) {
+        
+        subjectCount -= 1
+        
+        _ = allSubjects
+            .take(1)
+            .map{$0.filter{$0.id != subjectId}}
+            .subscribe(onNext: {
+                APIService.save("subject.json", $0)
+                self.allSubjects.onNext($0)
+            })
+    }
 }
