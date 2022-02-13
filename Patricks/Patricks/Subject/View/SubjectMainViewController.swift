@@ -30,7 +30,6 @@ class SubjectMainViewController: UIViewController {
         let emptyView = EmptyNoticeView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
         emptyView.center.x = self.view.center.x
         emptyView.center.y = self.view.center.y * 0.95
-        tableView.isScrollEnabled = false
         view.addSubview(emptyView)
         
         createButton.layer.cornerRadius = 30
@@ -42,6 +41,10 @@ class SubjectMainViewController: UIViewController {
                 
                 if !subjects.isEmpty {
                     emptyView.isHidden = true
+                    self?.tableView.isScrollEnabled = true
+                } else {
+                    emptyView.isHidden = false
+                    self?.tableView.isScrollEnabled = false
                 }
             })
     }

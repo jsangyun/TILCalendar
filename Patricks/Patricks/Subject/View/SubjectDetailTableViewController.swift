@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class SubjectDetailTableViewController: UITableViewController {
     
@@ -14,6 +15,7 @@ class SubjectDetailTableViewController: UITableViewController {
     var tils: [TIL]!
     
     var tilViewModel = AppMainViewController.tilViewModel
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,6 @@ class SubjectDetailTableViewController: UITableViewController {
         
         _ = tilViewModel.allTIL
             .map{$0.filter{$0.subjectId == self.subjectId}}
-            .take(1)
             .subscribe(onNext: { [weak self] in
                 self?.tils = $0.sorted(by: {$0.createdDate > $1.createdDate})
                 self?.tableView.reloadData()
@@ -38,6 +39,7 @@ class SubjectDetailTableViewController: UITableViewController {
                     self?.tableView.isScrollEnabled = true
                 }
             })
+            .disposed(by: disposeBag)
         
         self.navigationItem.title = subjectName
     }
@@ -59,6 +61,18 @@ class SubjectDetailTableViewController: UITableViewController {
         cell.tilDateLabel.text = item.createdDate
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let tilDetailVC = UIStoryboard(name: "TIL", bundle: nil).instantiateViewController(withIdentifier: "TILDetailViewController") as? TILDetailViewController else {return}
+        
+        print(indexPath.row)
+        tilDetailVC.tilId = tils[indexPath.row].id
+        tilDetailVC.tilViewModel = tilViewModel
+        tilDetailVC.subjectViewModel = AppMainViewController.subjectViewModel
+        
+        self.navigationController?.pushViewController(tilDetailVC, animated: true)
+        
     }
 
 }

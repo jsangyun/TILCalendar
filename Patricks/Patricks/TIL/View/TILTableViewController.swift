@@ -32,7 +32,6 @@ class TILTableViewController: UITableViewController {
         let emptyView = EmptyNoticeView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
         emptyView.center.x = self.view.center.x
         emptyView.center.y = self.view.center.y * 0.77
-        tableView.isScrollEnabled = false
         view.addSubview(emptyView)
         
         _ = tilViewModel.allTIL
@@ -46,8 +45,10 @@ class TILTableViewController: UITableViewController {
                 
                 if (!tils.isEmpty) {
                     emptyView.isHidden = true
+                    self?.tilTableView.isScrollEnabled = true
                 } else {
                     emptyView.isHidden = false
+                    self?.tableView.isScrollEnabled = false
                 }
                 
             })

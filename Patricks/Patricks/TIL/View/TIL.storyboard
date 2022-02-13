@@ -57,14 +57,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1F-A0-DCM">
-                                            <rect key="frame" x="30" y="12.5" width="33" height="20.5"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                            <rect key="frame" x="30" y="14" width="269" height="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.61568629740000003" green="0.2588235438" blue="0.24313727020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw0-zV-StY">
-                                            <rect key="frame" x="329.5" y="14" width="37" height="17"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw0-zV-StY">
+                                            <rect key="frame" x="335.5" y="15.5" width="31" height="14.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -74,6 +74,7 @@
                                         <constraint firstItem="z1F-A0-DCM" firstAttribute="centerY" secondItem="1RK-7Y-NM7" secondAttribute="centerY" id="4Qv-7T-A9M"/>
                                         <constraint firstItem="Iw0-zV-StY" firstAttribute="centerY" secondItem="1RK-7Y-NM7" secondAttribute="centerY" id="Nrf-cV-6iS"/>
                                         <constraint firstItem="z1F-A0-DCM" firstAttribute="leading" secondItem="1RK-7Y-NM7" secondAttribute="leadingMargin" constant="10" id="isR-hb-tqd"/>
+                                        <constraint firstItem="z1F-A0-DCM" firstAttribute="width" secondItem="1RK-7Y-NM7" secondAttribute="width" multiplier="0.7" id="t4z-6E-JNh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
