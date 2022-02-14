@@ -32,7 +32,7 @@ class APIService {
         let filePath = NSHomeDirectory() + "/Documents/\(filename)"
         let fileUrl = URL(fileURLWithPath: filePath)
         
-        print(fileUrl)
+//        print(fileUrl)
         
         do {
             try data = Data(contentsOf: fileUrl)

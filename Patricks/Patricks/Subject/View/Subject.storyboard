@@ -172,21 +172,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIL Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmr-qM-YHL">
-                                            <rect key="frame" x="35" y="14" width="219.5" height="17"/>
+                                            <rect key="frame" x="30" y="14" width="219.5" height="17"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.61568629740000003" green="0.2588235438" blue="0.24313727020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIL Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSK-2R-qwc">
                                             <rect key="frame" x="336.5" y="15.5" width="47.5" height="14.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="aSK-2R-qwc" firstAttribute="centerY" secondItem="Bd0-A6-VTN" secondAttribute="centerY" id="1Uj-zM-1TZ"/>
-                                        <constraint firstItem="lmr-qM-YHL" firstAttribute="leading" secondItem="Bd0-A6-VTN" secondAttribute="leadingMargin" constant="15" id="P3b-dL-8ma"/>
+                                        <constraint firstItem="lmr-qM-YHL" firstAttribute="leading" secondItem="Bd0-A6-VTN" secondAttribute="leadingMargin" constant="10" id="P3b-dL-8ma"/>
                                         <constraint firstItem="lmr-qM-YHL" firstAttribute="centerY" secondItem="Bd0-A6-VTN" secondAttribute="centerY" id="e9J-o7-mug"/>
                                         <constraint firstItem="lmr-qM-YHL" firstAttribute="width" secondItem="Bd0-A6-VTN" secondAttribute="width" multiplier="0.53" id="lUT-xE-0Iy"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="aSK-2R-qwc" secondAttribute="trailing" constant="10" id="p8v-BY-5ZC"/>
