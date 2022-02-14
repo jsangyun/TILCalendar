@@ -24,7 +24,7 @@ class SubjectViewModel {
     
     func getSubjectNameById(_ id: Int) -> String {
         var name: String = ""
-        
+
         _ = allSubjects
             .map {
                 $0.filter{$0.id == id}
@@ -58,6 +58,7 @@ class SubjectViewModel {
             .take(1)
             .map{$0.filter{$0.id != subjectId}}
             .subscribe(onNext: {
+                print($0)
                 APIService.save("subject.json", $0)
                 self.allSubjects.onNext($0)
             })
