@@ -53,32 +53,3 @@ class TILSubjectSelectViewController: UIViewController {
         self.present(addSubjectVC, animated: true, completion: nil)
     }
 }
-
-/*
-extension TILSubjectSelectViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return subjectViewModel.subjectCount
-    }
-        
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        _ = subjectViewModel.allSubjects
-            .subscribe(onNext: { [weak self] in
-                self?.allSubjects = $0
-            })
-            .disposed(by: disposeBag)
-        
-        return allSubjects[row].name
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedSubjectId = row
-    }
- 
-}
- */
