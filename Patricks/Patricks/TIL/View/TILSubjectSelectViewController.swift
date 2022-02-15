@@ -12,7 +12,6 @@ import RxCocoa
 class TILSubjectSelectViewController: UIViewController {
     
     var subjectViewModel = AppMainViewController.subjectViewModel
-    var allSubjects: [Subject] = []
     let disposeBag = DisposeBag()
     
     var selectedSubjectId: Int!
@@ -26,17 +25,10 @@ class TILSubjectSelectViewController: UIViewController {
         subjectPickerView.dataSource = nil
         
         _ = subjectViewModel.allSubjects
-            .map{$0.sorted(by: {$0.id < $1.id})}
             .bind(to: subjectPickerView.rx.itemTitles) { _, item in
-                self.selectedSubjectId = 0
+                self.selectedSubjectId = item.id
                 return item.name
         }
-        
-        _ = subjectPickerView.rx.itemSelected
-            .subscribe(onNext: { [weak self] in
-                self?.selectedSubjectId = $0.row
-            })
-            .disposed(by: disposeBag)
         
     }
     

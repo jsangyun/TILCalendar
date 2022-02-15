@@ -12,11 +12,11 @@ import RxCocoa
 class SubjectViewModel {
     
     var allSubjects = BehaviorSubject<[Subject]>(value: [])
-    var subjectCount: Int = 0
+    var idCounter: Int = 0
     
     init() {
         let data: [Subject] = APIService.load("subject.json")
-        subjectCount = data.count
+        idCounter = data.count
         
         allSubjects
             .onNext(data)
@@ -39,8 +39,9 @@ class SubjectViewModel {
     }
     
     func addSubject(_ subjectName: String) {
-        let newSubject = Subject(subjectCount, subjectName)
-        subjectCount += 1
+    
+        let newSubject = Subject(idCounter, subjectName)
+        
         _ = allSubjects
             .take(1)
             .subscribe(onNext: { prev in
@@ -48,11 +49,12 @@ class SubjectViewModel {
                 APIService.save("subject.json", newData)
                 self.allSubjects.onNext(newData)
             })
+        
+        idCounter += 1
+        
     }
     
     func deleteSubject(_ subjectId: Int) {
-        
-        subjectCount -= 1
         
         _ = allSubjects
             .take(1)

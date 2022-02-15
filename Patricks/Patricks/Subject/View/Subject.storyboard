@@ -28,8 +28,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="384.5" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-Hw-fmm">
-                                                    <rect key="frame" x="35" y="12.5" width="41.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-Hw-fmm">
+                                                    <rect key="frame" x="35" y="12.5" width="336.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="textColor" red="0.61568629740000003" green="0.2588235438" blue="0.24313727020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -38,6 +38,7 @@
                                             <constraints>
                                                 <constraint firstItem="SWI-Hw-fmm" firstAttribute="centerY" secondItem="UfK-9t-C2P" secondAttribute="centerY" id="F4x-tc-3bv"/>
                                                 <constraint firstItem="SWI-Hw-fmm" firstAttribute="leading" secondItem="UfK-9t-C2P" secondAttribute="leadingMargin" constant="15" id="j8u-9g-2GA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SWI-Hw-fmm" secondAttribute="trailing" constant="5" id="ksU-8u-JXr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

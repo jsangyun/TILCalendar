@@ -11,7 +11,7 @@ import RxSwift
 class TILViewModel {
     
     var allTIL = BehaviorSubject<[TIL]>(value: [])
-    var tilCount: Int = 0
+    var idCounter: Int = 0
     
     init() {
         
@@ -19,8 +19,8 @@ class TILViewModel {
         
         allTIL
             .onNext(data)
-        
-        tilCount = data.count
+
+        idCounter = data.count
     }
     
     //해당 날짜의 TIL 목록 가져오기
@@ -49,7 +49,7 @@ class TILViewModel {
                 self.allTIL.onNext(newData)
             })
         
-        tilCount += 1
+        idCounter += 1
     }
     
     func updateTil(_ til: TIL) {
@@ -66,7 +66,6 @@ class TILViewModel {
     }
     
     func deleteTil(_ tilId: Int) {
-        tilCount -= 1
         
         _ = allTIL
             .map {$0.filter{$0.id != tilId}}
@@ -100,7 +99,6 @@ class TILViewModel {
             .subscribe(onNext: {
                 APIService.save("til.json", $0)
                 self.allTIL.onNext($0)
-                self.tilCount = $0.count
             })
     }
 

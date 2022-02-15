@@ -142,7 +142,7 @@ extension TILEditViewController {
     }
     
     func saveCurrentTil() {
-        let newTIL: TIL = TIL(tilViewModel.tilCount+1, titleTextField.text!, contentTextView.text!, selectedDate, selectedSubjectId)
+        let newTIL: TIL = TIL(tilViewModel.idCounter+1, titleTextField.text!, contentTextView.text!, selectedDate, selectedSubjectId)
         
         tilViewModel.addTil(newTIL)
     }
