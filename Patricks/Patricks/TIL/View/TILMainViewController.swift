@@ -65,7 +65,7 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
             })
             .disposed(by: disposeBag)
         
-        if events.contains(APIService.formatDateToString(date)) {
+        if events.contains(date.formatToString()) {
             return 1
         } else {
             return 0
@@ -76,10 +76,9 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
 //Appearance 코드들
 extension TILMainViewController {
     func setNavigationBar() {
-        let blackColor = UIColor.black.withAlphaComponent(0.8)
-        //Larget Title Color
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: blackColor]
-        self.navigationController?.navigationBar.tintColor = blackColor
+        
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.scarlet]
+        self.navigationController?.navigationBar.tintColor = UIColor.scarlet
         
         //Title Text
         self.navigationItem.title = "TIL Calendar"
@@ -101,10 +100,11 @@ extension TILMainViewController {
         tilCalendar.appearance.titleFont = UIFont.preferredFont(forTextStyle: .headline)
         
         //Color
-        tilCalendar.appearance.headerTitleColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
-        tilCalendar.appearance.weekdayTextColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
-        tilCalendar.appearance.todayColor = UIColor(red: 0.59, green: 0.16, blue: 0.17, alpha: 0.8)
-        tilCalendar.appearance.titleDefaultColor = .black.withAlphaComponent(0.7)
-        tilCalendar.appearance.eventDefaultColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
+        tilCalendar.appearance.headerTitleColor = UIColor.blackColor
+        tilCalendar.appearance.weekdayTextColor = UIColor.blackColor
+        tilCalendar.appearance.titleTodayColor = UIColor.blackColor
+        tilCalendar.appearance.todayColor = UIColor.brightGreen
+        tilCalendar.appearance.titleDefaultColor = UIColor.blackColor
+        tilCalendar.appearance.eventDefaultColor = UIColor.skyBlue
     }
 }

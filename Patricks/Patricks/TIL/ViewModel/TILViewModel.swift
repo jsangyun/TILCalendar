@@ -1,9 +1,4 @@
-//
 //  TILViewModel.swift
-//  Patricks
-//
-//  Created by 정상윤 on 2021/12/03.
-//
 
 import Foundation
 import RxSwift
@@ -29,7 +24,7 @@ class TILViewModel {
         
         _ = allTIL
             .map{
-                $0.filter {$0.createdDate == APIService.formatDateToString(date)}
+                $0.filter {$0.createdDate == date.formatToString()}
             }
             .take(1)
             .subscribe(onNext:{

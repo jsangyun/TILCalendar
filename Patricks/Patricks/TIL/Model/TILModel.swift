@@ -1,9 +1,4 @@
-//
 //  Model.swift
-//  Patricks
-//
-//  Created by 정상윤 on 2021/11/20.
-//
 
 import Foundation
 
@@ -27,7 +22,7 @@ struct TIL: Codable {
         self.id = id
         self.title = title
         self.content = content
-        self.createdDate = APIService.formatDateToString(createdDate)
+        self.createdDate = createdDate.formatToString()
         self.subjectId = subjectId
     }
     

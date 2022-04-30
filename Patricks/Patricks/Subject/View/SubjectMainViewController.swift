@@ -99,13 +99,12 @@ extension SubjectMainViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension SubjectMainViewController {
     func setNavigationBar() {
-        let blackColor = UIColor.black.withAlphaComponent(0.8)
         
         //Larget Title Color
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: blackColor]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.scarlet]
         self.navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: blackColor]
-        self.navigationController?.navigationBar.tintColor = blackColor
+            .foregroundColor: UIColor.scarlet]
+        self.navigationController?.navigationBar.tintColor = UIColor.scarlet
         
     }
     

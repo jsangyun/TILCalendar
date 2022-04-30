@@ -37,7 +37,7 @@ class TILTableViewController: UITableViewController {
         _ = tilViewModel.allTIL
             .observe(on: MainScheduler.instance)
             .map{
-                $0.filter{$0.createdDate == APIService.formatDateToString(self.selectedDate)}
+                $0.filter{$0.createdDate == self.selectedDate.formatToString()}
             }
             .subscribe(onNext: { [weak self] tils in
                 self?.thisDayTIL = tils
@@ -125,7 +125,7 @@ extension TILTableViewController {
         
 //        self.navigationItem.rightBarButtonItem = rightButton
         
-        self.navigationItem.title = APIService.formatDateToString(selectedDate)
+        self.navigationItem.title = selectedDate.formatToString()
         
         self.navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1),

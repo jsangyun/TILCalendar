@@ -22,6 +22,9 @@
 		446DCCEA278FF922008601A8 /* SubjectDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCCE9278FF922008601A8 /* SubjectDetailTableViewController.swift */; };
 		446DCCEC278FFC60008601A8 /* EmptyNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCCEB278FFC60008601A8 /* EmptyNoticeView.swift */; };
 		446DCCF027915DC8008601A8 /* AppMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCCEF27915DC8008601A8 /* AppMainViewController.swift */; };
+		44918C8E281CE46D00992FA8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44918C8D281CE46D00992FA8 /* DateExtension.swift */; };
+		44918C90281CE4C200992FA8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44918C8F281CE4C200992FA8 /* StringExtension.swift */; };
+		44918C92281CE5DC00992FA8 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44918C91281CE5DC00992FA8 /* UIColorExtension.swift */; };
 		44B851C6277E345F002524DF /* TILTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B851C5277E345F002524DF /* TILTableViewCell.swift */; };
 		44B851C8277F1D86002524DF /* TILDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B851C7277F1D86002524DF /* TILDetailViewController.swift */; };
 		44F0450D27B37C1700C2D222 /* SubjectMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */; };
@@ -54,6 +57,9 @@
 		446DCCE9278FF922008601A8 /* SubjectDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailTableViewController.swift; sourceTree = "<group>"; };
 		446DCCEB278FFC60008601A8 /* EmptyNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNoticeView.swift; sourceTree = "<group>"; };
 		446DCCEF27915DC8008601A8 /* AppMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainViewController.swift; sourceTree = "<group>"; };
+		44918C8D281CE46D00992FA8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		44918C8F281CE4C200992FA8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		44918C91281CE5DC00992FA8 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		44B851C5277E345F002524DF /* TILTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILTableViewCell.swift; sourceTree = "<group>"; };
 		44B851C7277F1D86002524DF /* TILDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILDetailViewController.swift; sourceTree = "<group>"; };
 		44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectMainViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 			children = (
 				443C14D52747986E007AE994 /* App */,
 				4441D71D275F32AE003C13EF /* CustomAPI */,
+				44918C8C281CE45F00992FA8 /* Utils */,
 				443C14DB2747A155007AE994 /* TIL */,
 				44F990CF275B279900A75F6D /* Subject */,
 			);
@@ -180,6 +187,16 @@
 				4441D71E275F3537003C13EF /* APIService.swift */,
 			);
 			path = CustomAPI;
+			sourceTree = "<group>";
+		};
+		44918C8C281CE45F00992FA8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				44918C8D281CE46D00992FA8 /* DateExtension.swift */,
+				44918C8F281CE4C200992FA8 /* StringExtension.swift */,
+				44918C91281CE5DC00992FA8 /* UIColorExtension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		44F990CF275B279900A75F6D /* Subject */ = {
@@ -348,8 +365,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				44F990CE275A01D300A75F6D /* TILViewModel.swift in Sources */,
+				44918C8E281CE46D00992FA8 /* DateExtension.swift in Sources */,
 				446DCCE6278AC287008601A8 /* TILEditViewController.swift in Sources */,
 				44419747271AAFE900B648DE /* AppDelegate.swift in Sources */,
+				44918C92281CE5DC00992FA8 /* UIColorExtension.swift in Sources */,
 				44F0450F27B3DCC500C2D222 /* SubjectCreateViewController.swift in Sources */,
 				446DCCEA278FF922008601A8 /* SubjectDetailTableViewController.swift in Sources */,
 				4441D72227608D7D003C13EF /* SubjectViewModel.swift in Sources */,
@@ -366,6 +385,7 @@
 				446DCCEC278FFC60008601A8 /* EmptyNoticeView.swift in Sources */,
 				44F990D8275DE8DA00A75F6D /* TILTableViewController.swift in Sources */,
 				4441D71F275F3537003C13EF /* APIService.swift in Sources */,
+				44918C90281CE4C200992FA8 /* StringExtension.swift in Sources */,
 				443C14E62748C0D5007AE994 /* TILModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
