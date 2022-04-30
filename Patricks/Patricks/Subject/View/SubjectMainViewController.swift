@@ -1,9 +1,4 @@
-//
 //  SubjectMainTableViewController.swift
-//  Patricks
-//
-//  Created by 정상윤 on 2022/02/09.
-//
 
 import UIKit
 import RxSwift
@@ -104,14 +99,13 @@ extension SubjectMainViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension SubjectMainViewController {
     func setNavigationBar() {
-        let titleColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
-        let tintColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
+        let blackColor = UIColor.black.withAlphaComponent(0.8)
         
         //Larget Title Color
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: titleColor]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: blackColor]
         self.navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: titleColor]
-        self.navigationController?.navigationBar.tintColor = tintColor
+            .foregroundColor: blackColor]
+        self.navigationController?.navigationBar.tintColor = blackColor
         
     }
     

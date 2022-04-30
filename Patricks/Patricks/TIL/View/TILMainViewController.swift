@@ -48,6 +48,8 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
         tableVC.subjectViewModel = self.subjectViewModel
         
         self.navigationController?.pushViewController(tableVC, animated: true)
+        
+        tilCalendar.deselect(date)
     }
     
     // drawing event dots on calendar
@@ -74,33 +76,35 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
 //Appearance 코드들
 extension TILMainViewController {
     func setNavigationBar() {
+        let blackColor = UIColor.black.withAlphaComponent(0.8)
         //Larget Title Color
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)]
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: blackColor]
+        self.navigationController?.navigationBar.tintColor = blackColor
         
         //Title Text
         self.navigationItem.title = "TIL Calendar"
     }
     
     func setCalendarAppearance() {
+        // not show other month day
+        tilCalendar.placeholderType = .none
+        
         //Locale Set
         tilCalendar.locale = Locale(identifier: "ko_KR")
         
         //Header Date Format
         tilCalendar.appearance.headerDateFormat = "YYYY년 M월"
         
-//        tilCalendar.appearance.
-        
         //Font Size
         tilCalendar.appearance.headerTitleFont = UIFont.preferredFont(forTextStyle: .title2)
         tilCalendar.appearance.weekdayFont = UIFont.preferredFont(forTextStyle: .headline)
-        tilCalendar.appearance.titleFont = UIFont.preferredFont(forTextStyle: .subheadline)
+        tilCalendar.appearance.titleFont = UIFont.preferredFont(forTextStyle: .headline)
         
         //Color
         tilCalendar.appearance.headerTitleColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
         tilCalendar.appearance.weekdayTextColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
-        tilCalendar.appearance.selectionColor = UIColor(red: 0.96, green: 0.87, blue: 0.66, alpha: 1)
         tilCalendar.appearance.todayColor = UIColor(red: 0.59, green: 0.16, blue: 0.17, alpha: 0.8)
+        tilCalendar.appearance.titleDefaultColor = .black.withAlphaComponent(0.7)
         tilCalendar.appearance.eventDefaultColor = UIColor(red: 0.58, green: 0.67, blue: 0.45, alpha: 1)
     }
 }

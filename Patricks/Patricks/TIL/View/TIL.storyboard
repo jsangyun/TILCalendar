@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YUi-a3-mYx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YUi-a3-mYx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TIL 캘린더-->
+        <!--TIL Calendar-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="TILMainViewController" id="Y6W-OH-hqX" customClass="TILMainViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHT-KJ-e3b" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="157" width="414" height="627"/>
+                                <rect key="frame" x="0.0" y="179" width="414" height="582.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -25,12 +25,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DHT-KJ-e3b" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" multiplier="1.05" id="4G2-AW-UOl"/>
-                            <constraint firstItem="DHT-KJ-e3b" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.7" id="E7Y-hM-zKO"/>
                             <constraint firstItem="DHT-KJ-e3b" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="OC3-qq-xlQ"/>
                             <constraint firstItem="DHT-KJ-e3b" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jTd-wk-n2w"/>
+                            <constraint firstItem="DHT-KJ-e3b" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.65" id="urR-Vi-VMk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TIL 캘린더" largeTitleDisplayMode="always" id="9EH-R2-NXW"/>
+                    <navigationItem key="navigationItem" title="TIL Calendar" largeTitleDisplayMode="always" id="9EH-R2-NXW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tilCalendar" destination="DHT-KJ-e3b" id="TqW-QK-exf"/>
@@ -53,17 +53,17 @@
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7iM-XB-qa2" id="1RK-7Y-NM7">
-                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1F-A0-DCM">
-                                            <rect key="frame" x="30" y="14" width="269" height="17"/>
+                                            <rect key="frame" x="30" y="14" width="270" height="17"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.61568629740000003" green="0.2588235438" blue="0.24313727020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw0-zV-StY">
-                                            <rect key="frame" x="335.5" y="15.5" width="31" height="14.5"/>
+                                            <rect key="frame" x="336.5" y="15.5" width="31" height="14.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                             <nil key="highlightedColor"/>
@@ -327,11 +327,11 @@
             </objects>
             <point key="canvasLocation" x="3884" y="84"/>
         </scene>
-        <!--TIL-->
+        <!--Calendar-->
         <scene sceneID="u9c-EE-IMT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YUi-a3-mYx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TIL" image="note.text" catalog="system" id="bgD-OZ-grG"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="note.text" catalog="system" id="bgD-OZ-grG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="OvO-NC-IXt">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>

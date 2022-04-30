@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rIC-4O-H6a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rIC-4O-H6a">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--과목-->
+        <!--Subject-->
         <scene sceneID="PUe-UD-cKj">
             <objects>
                 <viewController id="jiH-oS-QWu" customClass="SubjectMainViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,19 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nHT-ww-KJ5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nHT-ww-KJ5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SubjectMainTableViewCell" id="erF-I3-6Tk" customClass="SubjectTableViewCell" customModule="Patricks" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="erF-I3-6Tk" id="UfK-9t-C2P">
-                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-Hw-fmm">
-                                                    <rect key="frame" x="35" y="12.5" width="336.5" height="20.5"/>
+                                                    <rect key="frame" x="35" y="12.5" width="337.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="textColor" red="0.61568629740000003" green="0.2588235438" blue="0.24313727020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -75,7 +74,7 @@
                             <constraint firstItem="Et0-de-DXc" firstAttribute="trailing" secondItem="ZTx-z8-PvY" secondAttribute="trailing" constant="20" id="sw3-04-S0V"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="과목" largeTitleDisplayMode="always" id="fh7-KA-j4K"/>
+                    <navigationItem key="navigationItem" title="Subject" largeTitleDisplayMode="always" id="fh7-KA-j4K"/>
                     <connections>
                         <outlet property="createButton" destination="ZTx-z8-PvY" id="jA7-GI-0ey"/>
                         <outlet property="tableView" destination="nHT-ww-KJ5" id="k9A-RY-oII"/>
@@ -210,11 +209,11 @@
             </objects>
             <point key="canvasLocation" x="2400" y="24.776785714285712"/>
         </scene>
-        <!--과목-->
+        <!--Subject-->
         <scene sceneID="Dm7-q2-yJb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rIC-4O-H6a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="과목" image="book" catalog="system" id="jDy-3U-qQW"/>
+                    <tabBarItem key="tabBarItem" title="Subject" image="book" catalog="system" id="jDy-3U-qQW"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="pk2-my-rjP">

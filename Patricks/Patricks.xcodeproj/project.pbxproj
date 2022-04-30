@@ -204,9 +204,9 @@
 			isa = PBXGroup;
 			children = (
 				44F990D5275B32FF00A75F6D /* Subject.storyboard */,
+				44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */,
 				446DCCE9278FF922008601A8 /* SubjectDetailTableViewController.swift */,
 				4441D72527609256003C13EF /* SubjectTableViewCell.swift */,
-				44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */,
 				44F0450E27B3DCC500C2D222 /* SubjectCreateViewController.swift */,
 				44F0451427B7816B00C2D222 /* SubjectDetailTableViewCell.swift */,
 			);
