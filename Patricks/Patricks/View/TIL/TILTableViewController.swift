@@ -75,6 +75,20 @@ class TILTableViewController: UIViewController {
                 self?.tilTableView.deselectRow(at: indexPath, animated: true)
             })
             .disposed(by: disposeBag)
+        
+        // delete event binding
+        _ = tilTableView.rx.modelDeleted(TIL.self)
+            .subscribe(onNext: { [weak self] deletedTil in
+                
+                self?.tilViewModel.deleteTil(id: deletedTil.id)
+                
+                if let date = self?.selectedDate,
+                   let newList = self?.tilViewModel.getTILByDate(date: date) {
+                    self?.tilList.accept(newList)
+                }
+                
+            })
+            .disposed(by: disposeBag)
     }
     
     @objc func createButtonClicked() {
@@ -90,9 +104,6 @@ class TILTableViewController: UIViewController {
 // Appearance code
 extension TILTableViewController {
     func setNavigationBar() {
-//        let rightButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteButtonPressed))
-        
-//        self.navigationItem.rightBarButtonItem = rightButton
         
         self.navigationItem.title = selectedDate.formatToString()
         self.navigationItem.largeTitleDisplayMode = .never

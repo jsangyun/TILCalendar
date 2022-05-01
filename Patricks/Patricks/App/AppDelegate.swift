@@ -1,9 +1,5 @@
-//
 //  AppDelegate.swift
 //  Patricks
-//
-//  Created by 정상윤 on 2021/10/16.
-//
 
 import UIKit
 
