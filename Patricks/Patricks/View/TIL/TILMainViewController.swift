@@ -1,9 +1,4 @@
-//
 //  TILMainViewController.swift
-//  Patricks
-//
-//  Created by 정상윤 on 2021/11/19.
-//
 
 import UIKit
 import RxSwift
@@ -12,9 +7,9 @@ import FSCalendar
 
 class TILMainViewController: UIViewController {
     
-    var tilViewModel = AppMainViewController.tilViewModel
-    var subjectViewModel = AppMainViewController.subjectViewModel
+    var tilList = BehaviorRelay<[TIL]>(value: [])
     
+    let tilViewModel = TILViewModel()
     let disposeBag = DisposeBag()
     
     @IBOutlet weak var tilCalendar: FSCalendar!
@@ -23,15 +18,18 @@ class TILMainViewController: UIViewController {
         super.viewDidLoad()
         
         setNavigationBar()
-        
-        tilCalendar.dataSource = self
-        tilCalendar.delegate = self
-        
+        setDelegate()
         setCalendarAppearance()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tilList.accept(tilViewModel.allTIL())
         tilCalendar.reloadData()
+    }
+    
+    private func setDelegate() {
+        tilCalendar.dataSource = self
+        tilCalendar.delegate = self
     }
 }
 
@@ -44,11 +42,10 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
         guard let tableVC = self.storyboard?.instantiateViewController(withIdentifier: "TILTableViewController") as? TILTableViewController else { return }
         
         tableVC.selectedDate = date
-        tableVC.tilViewModel = self.tilViewModel
-        tableVC.subjectViewModel = self.subjectViewModel
         
         self.navigationController?.pushViewController(tableVC, animated: true)
         
+        print("Clicked")
         tilCalendar.deselect(date)
     }
     
@@ -57,10 +54,11 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
         
         var events: [String] = []
         
-        _ = tilViewModel.allTIL
+        _ = tilList
+            .asObservable()
             .subscribe(onNext:{
                 $0.forEach {
-                    events.append($0.createdDate)
+                    events.append($0.createdDate.formatToString())
                 }
             })
             .disposed(by: disposeBag)

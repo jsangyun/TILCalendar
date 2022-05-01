@@ -8,13 +8,9 @@
 import UIKit
 
 class AppMainViewController: UITabBarController {
-
-    static let tilViewModel = TILViewModel()
-    static let subjectViewModel = SubjectViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
 }

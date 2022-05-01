@@ -1,17 +1,14 @@
-//
 //  SubjectCreateViewController.swift
-//  Patricks
-//
-//  Created by 정상윤 on 2022/02/09.
-//
 
 import UIKit
+import RxSwift
 
 class SubjectCreateViewController: UIViewController {
 
     @IBOutlet weak var subjectNameTextField: UITextField!
     
-    var subjectViewModel: SubjectViewModel!
+    let subjectViewModel = SubjectViewModel()
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +28,12 @@ class SubjectCreateViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
             
         } else {
-            subjectViewModel.addSubject(subjectNameTextField.text!)
-            dismiss(animated: true, completion: nil)
+            subjectViewModel.saveNewSubject(name: subjectNameTextField.text!)
+            dismiss(animated: true) {
+                if let parentVC = self.presentingViewController as? TILSubjectSelectViewController {
+                    parentVC.subjectViewModel.loadData()
+                }
+            }
         }
     }
     

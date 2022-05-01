@@ -1,9 +1,4 @@
-//
 //  TILEditViewController.swift
-//  Patricks
-//
-//  Created by 정상윤 on 2022/01/09.
-//
 
 import UIKit
 import RxSwift
@@ -16,14 +11,15 @@ class TILEditViewController: UIViewController {
         case edit
     }
     
-    var til: TIL!
-    var selectedSubjectId: Int!
+    var til: TIL?
+    var selectedSubjectId: String!
     var selectedDate: Date!
     var mode: Mode!
     
-    var tilViewModel: TILViewModel!
-    var subjectViewModel: SubjectViewModel!
-    var subjectObserver = BehaviorSubject<String>(value: "과목 선택")
+    let tilViewModel = TILViewModel()
+    let subjectViewModel = SubjectViewModel()
+    
+    var subjectName = BehaviorRelay<String>(value: "과목 선택")
     var disposeBag = DisposeBag()
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -41,12 +37,20 @@ class TILEditViewController: UIViewController {
         }
         
         if mode == .edit {
-            fillText(til)
+            fillText(til!)
         }
         
-        _ = subjectObserver.bind(to: subjectSelectButton.rx.title())
+        _ = subjectName
+            .bind(to: subjectSelectButton.rx.title())
+            .disposed(by: disposeBag)
         
         titleTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let subjectId = selectedSubjectId else {return}
+        subjectName.accept(subjectViewModel.getSubjectName(id: subjectId))
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
@@ -94,7 +98,7 @@ class TILEditViewController: UIViewController {
     @IBAction func subjectClicked(_ sender: Any) {
         guard let subjectVC = storyboard?.instantiateViewController(withIdentifier: "TILSubjectSelectViewController") as? TILSubjectSelectViewController else {return}
         
-        subjectVC.modalPresentationStyle = .overCurrentContext
+        subjectVC.modalPresentationStyle = .fullScreen
         self.present(subjectVC, animated: true, completion: nil)
     }
     
@@ -110,7 +114,7 @@ extension TILEditViewController {
     //fill data to textview / textfield
     func fillText(_ til: TIL) {
         
-        subjectObserver.onNext(subjectViewModel.getSubjectNameById(til.subjectId))
+        subjectName.accept(subjectViewModel.getSubjectName(id: til.subjectId))
         
         titleTextField.text = til.title
         contentTextView.text = til.content
@@ -120,7 +124,7 @@ extension TILEditViewController {
     //check whether data is changed or not
     func isThereChange() -> Bool {
         if (mode == .edit) {
-            if (titleTextField.text != til.title) || (subjectSelectButton.titleLabel?.text != subjectViewModel.getSubjectNameById(til.subjectId)) || (contentTextView.text != til.content) {
+            if (titleTextField.text != til!.title) || (subjectSelectButton.titleLabel?.text != subjectViewModel.getSubjectName(id: til!.subjectId)) || (contentTextView.text != til!.content) {
                 return true
             }
         }
@@ -135,38 +139,11 @@ extension TILEditViewController {
     }
     
     func updateCurrentTil() {
-        til.title = titleTextField.text!
-        til.content = contentTextView.text!
-        til.subjectId = selectedSubjectId
-        tilViewModel.updateTil(til)
+        tilViewModel.updateTil(id: til!.id, title: titleTextField.text!, content: contentTextView.text, createdDate: til!.createdDate, subjectId: selectedSubjectId)
     }
     
     func saveCurrentTil() {
-        let newTIL: TIL = TIL(tilViewModel.idCounter+1, titleTextField.text!, contentTextView.text!, selectedDate, selectedSubjectId)
-        
-        tilViewModel.addTil(newTIL)
+        tilViewModel.saveNewTil(title: titleTextField.text!, content: contentTextView.text, createdDate: selectedDate, subjectId: selectedSubjectId)
     }
     
-}
-
-extension UITextView {
-    func addDoneButtonToKeyboard() {
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-        
-        toolBar.barStyle = .default
-        
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonAction))
-        
-        let items = [flexSpace, doneButton]
-        
-        toolBar.items = items
-        toolBar.sizeToFit()
-        
-        self.inputAccessoryView = toolBar
-    }
-    
-    @objc func doneButtonAction() {
-        self.resignFirstResponder()
-    }
 }

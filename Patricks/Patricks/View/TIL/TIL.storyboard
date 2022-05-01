@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,62 +41,73 @@
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="83.705357142857139"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="oPN-rj-J8j">
+        <!--Table View Controller-->
+        <scene sceneID="4ea-Py-nev">
             <objects>
-                <tableViewController storyboardIdentifier="TILTableViewController" id="jZf-uB-YXk" customClass="TILTableViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Tvj-nS-peS">
+                <viewController storyboardIdentifier="TILTableViewController" id="VPq-cJ-xqZ" customClass="TILTableViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j9e-uz-2Gp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nLR-LX-pWp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TILTableViewCell" id="TaP-k1-Vln" customClass="TILTableViewCell" customModule="Patricks" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TaP-k1-Vln" id="kjx-R8-7er">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulH-Xa-mSA">
+                                                    <rect key="frame" x="25" y="17.5" width="314" height="20"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과목" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9r-nt-zp9">
+                                                    <rect key="frame" x="349" y="19" width="45" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="9HH-6t-w3C"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="X9r-nt-zp9" firstAttribute="leading" secondItem="ulH-Xa-mSA" secondAttribute="trailing" constant="10" id="0cr-j3-Iyw"/>
+                                                <constraint firstItem="ulH-Xa-mSA" firstAttribute="centerY" secondItem="kjx-R8-7er" secondAttribute="centerY" id="8vS-Jz-Geq"/>
+                                                <constraint firstItem="ulH-Xa-mSA" firstAttribute="leading" secondItem="kjx-R8-7er" secondAttribute="leadingMargin" constant="5" id="CPE-Gd-GYi"/>
+                                                <constraint firstItem="X9r-nt-zp9" firstAttribute="centerY" secondItem="kjx-R8-7er" secondAttribute="centerY" id="O3z-04-Bqv"/>
+                                                <constraint firstItem="X9r-nt-zp9" firstAttribute="trailing" secondItem="kjx-R8-7er" secondAttribute="trailingMargin" id="Tfm-XP-jK4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subjectNameLabel" destination="X9r-nt-zp9" id="Sci-cq-GQN"/>
+                                            <outlet property="tilTitleLabel" destination="ulH-Xa-mSA" id="AsG-FK-qcz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VId-N4-Ywt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TILTableViewCell" id="7iM-XB-qa2" customClass="TILTableViewCell" customModule="Patricks" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="45"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7iM-XB-qa2" id="1RK-7Y-NM7">
-                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="45"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1F-A0-DCM">
-                                            <rect key="frame" x="30" y="14" width="270" height="17"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" red="0.61568629740000003" green="0.2588235438" blue="0.24313727020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw0-zV-StY">
-                                            <rect key="frame" x="336.5" y="15.5" width="31" height="14.5"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <color key="textColor" systemColor="secondaryLabelColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Iw0-zV-StY" secondAttribute="trailing" constant="10" id="2Vq-b6-KiI"/>
-                                        <constraint firstItem="z1F-A0-DCM" firstAttribute="centerY" secondItem="1RK-7Y-NM7" secondAttribute="centerY" id="4Qv-7T-A9M"/>
-                                        <constraint firstItem="Iw0-zV-StY" firstAttribute="centerY" secondItem="1RK-7Y-NM7" secondAttribute="centerY" id="Nrf-cV-6iS"/>
-                                        <constraint firstItem="z1F-A0-DCM" firstAttribute="leading" secondItem="1RK-7Y-NM7" secondAttribute="leadingMargin" constant="10" id="isR-hb-tqd"/>
-                                        <constraint firstItem="z1F-A0-DCM" firstAttribute="width" secondItem="1RK-7Y-NM7" secondAttribute="width" multiplier="0.7" id="t4z-6E-JNh"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="subjectNameLabel" destination="Iw0-zV-StY" id="roy-MT-GID"/>
-                                    <outlet property="tilTitleLabel" destination="z1F-A0-DCM" id="hFA-5C-ena"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="jZf-uB-YXk" id="PGR-pJ-mcC"/>
-                            <outlet property="delegate" destination="jZf-uB-YXk" id="rAr-ee-Ys1"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="whT-QA-Ngz"/>
+                        <constraints>
+                            <constraint firstItem="nLR-LX-pWp" firstAttribute="leading" secondItem="VId-N4-Ywt" secondAttribute="leading" id="Euk-X4-488"/>
+                            <constraint firstItem="nLR-LX-pWp" firstAttribute="top" secondItem="VId-N4-Ywt" secondAttribute="top" id="HAl-4a-HL4"/>
+                            <constraint firstItem="VId-N4-Ywt" firstAttribute="trailing" secondItem="nLR-LX-pWp" secondAttribute="trailing" id="J2c-1I-8Py"/>
+                            <constraint firstItem="VId-N4-Ywt" firstAttribute="bottom" secondItem="nLR-LX-pWp" secondAttribute="bottom" id="XQM-Ms-NXc"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="tilTableView" destination="Tvj-nS-peS" id="K51-dO-azK"/>
+                        <outlet property="tilTableView" destination="nLR-LX-pWp" id="b4V-rT-vVd"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ox7-xh-Gmu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbq-mO-zBS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1730" y="84"/>
+            <point key="canvasLocation" x="1694" y="84"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="LN2-mY-3WX">
@@ -189,7 +201,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63c-NO-tLA">
                                         <rect key="frame" x="0.0" y="0.0" width="48.5" height="45"/>
-                                        <color key="tintColor" red="0.37647059560000001" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" name="Violet"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="취소"/>
                                         <connections>
@@ -198,7 +210,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Nt-Ja-jT5">
                                         <rect key="frame" x="365.5" y="0.0" width="48.5" height="45"/>
-                                        <color key="tintColor" red="0.37647059560000001" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" name="Violet"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="완료"/>
                                         <connections>
@@ -278,7 +290,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rL-K6-H3D">
                                         <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
-                                        <color key="tintColor" red="0.37647059560000001" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" name="Violet"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="취소"/>
                                         <connections>
@@ -287,7 +299,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKm-VI-AvD">
                                         <rect key="frame" x="76" y="0.0" width="48.5" height="30"/>
-                                        <color key="tintColor" red="0.37647059560000001" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" name="Violet"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="추가"/>
                                         <connections>
@@ -296,7 +308,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-q3-zTI">
                                         <rect key="frame" x="151.5" y="0.0" width="48.5" height="30"/>
-                                        <color key="tintColor" red="0.37647059560000001" green="0.79607844350000001" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" name="Violet"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="완료"/>
                                         <connections>
@@ -349,11 +361,11 @@
     </scenes>
     <resources>
         <image name="note.text" catalog="system" width="128" height="106"/>
+        <namedColor name="Violet">
+            <color red="0.94499999999999995" green="0.61199999999999999" blue="0.47499999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

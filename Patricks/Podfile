@@ -9,5 +9,5 @@ target 'Patricks' do
   pod 'FSCalendar'
   pod 'RxSwift', '6.2.0'
   pod 'RxCocoa', '6.2.0'
-
+  pod 'lottie-ios'
 end
