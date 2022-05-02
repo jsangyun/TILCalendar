@@ -104,7 +104,6 @@ class TILTableViewController: UIViewController {
 // Appearance code
 extension TILTableViewController {
     func setNavigationBar() {
-        
         self.navigationItem.title = selectedDate.formatToString()
         self.navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -115,5 +114,6 @@ extension TILTableViewController {
         let createButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createButtonClicked))
         
         self.navigationItem.rightBarButtonItem = createButton
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
 }

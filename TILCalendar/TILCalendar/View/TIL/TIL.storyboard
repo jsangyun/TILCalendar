@@ -32,7 +32,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TIL Calendar" largeTitleDisplayMode="always" id="9EH-R2-NXW"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tilCalendar" destination="DHT-KJ-e3b" id="TqW-QK-exf"/>
                     </connections>
@@ -362,7 +361,7 @@
     <resources>
         <image name="note.text" catalog="system" width="128" height="106"/>
         <namedColor name="Violet">
-            <color red="0.94499999999999995" green="0.61199999999999999" blue="0.47499999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94499999284744263" green="0.6119999885559082" blue="0.47499999403953552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -5,7 +5,7 @@ import RxSwift
 import RxCocoa
 import FSCalendar
 
-class TILMainViewController: UIViewController {
+class TILMainViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var tilList = BehaviorRelay<[TIL]>(value: [])
     
@@ -23,6 +23,7 @@ class TILMainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tilList.accept(tilViewModel.allTIL())
         tilCalendar.reloadData()
     }
@@ -45,8 +46,8 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
         
         self.navigationController?.pushViewController(tableVC, animated: true)
         
-        print("Clicked")
         tilCalendar.deselect(date)
+        
     }
     
     // drawing event dots on calendar
@@ -55,7 +56,6 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
         var events: [String] = []
         
         _ = tilList
-            .asObservable()
             .subscribe(onNext:{
                 $0.forEach {
                     events.append($0.createdDate.formatToString())
@@ -74,18 +74,14 @@ extension TILMainViewController: FSCalendarDelegate, FSCalendarDataSource {
 //Appearance 코드들
 extension TILMainViewController {
     func setNavigationBar() {
-        
         self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.scarlet]
         self.navigationController?.navigationBar.tintColor = UIColor.scarlet
-        
-        //Title Text
-        self.navigationItem.title = "TIL Calendar"
     }
     
     func setCalendarAppearance() {
         // not show other month day
         tilCalendar.placeholderType = .none
-        
+    
         //Locale Set
         tilCalendar.locale = Locale(identifier: "ko_KR")
         

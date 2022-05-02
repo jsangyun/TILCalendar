@@ -36,10 +36,11 @@
 		44F990D4275B27D000A75F6D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990D3275B27D000A75F6D /* Subject.swift */; };
 		44F990D6275B32FF00A75F6D /* Subject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F990D5275B32FF00A75F6D /* Subject.storyboard */; };
 		44F990D8275DE8DA00A75F6D /* TILTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990D7275DE8DA00A75F6D /* TILTableViewController.swift */; };
-		F83D3E83C76AF5BECC2C791D /* Pods_Patricks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC9053CB42FBC0E931CE728 /* Pods_Patricks.framework */; };
+		4BA504B4CB5F54040DF456EA /* Pods_TILCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E207D6CD7C8AAF7D815B931B /* Pods_TILCalendar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021F2D6597D534260E0BEC05 /* Pods-TILCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TILCalendar.debug.xcconfig"; path = "Target Support Files/Pods-TILCalendar/Pods-TILCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 		4406EBB7281E312000692FF7 /* TILViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILViewModel.swift; sourceTree = "<group>"; };
 		4406EBBB281E574E00692FF7 /* empty-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "empty-animation.json"; sourceTree = "<group>"; };
 		4406EBBE281E5A2200692FF7 /* AnimationViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewExtension.swift; sourceTree = "<group>"; };
@@ -47,12 +48,12 @@
 		443C14E12747AA1F007AE994 /* TIL.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TIL.storyboard; sourceTree = "<group>"; };
 		443C14E32747AC0F007AE994 /* TILMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILMainViewController.swift; sourceTree = "<group>"; };
 		443C14E52748C0D5007AE994 /* TIL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIL.swift; sourceTree = "<group>"; };
-		44419743271AAFE900B648DE /* Patricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44419743271AAFE900B648DE /* TILCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TILCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44419746271AAFE900B648DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44419748271AAFE900B648DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4441974F271AAFEA00B648DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44419752271AAFEA00B648DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		44419754271AAFEA00B648DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Patricks/App/Info.plist; sourceTree = SOURCE_ROOT; };
+		44419754271AAFEA00B648DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = TILCalendar/Info.plist; sourceTree = SOURCE_ROOT; };
 		4441D71E275F3537003C13EF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		4441D72027606BD9003C13EF /* RxSwiftPractice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPractice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4441D72527609256003C13EF /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
@@ -72,9 +73,10 @@
 		44F990D3275B27D000A75F6D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		44F990D5275B32FF00A75F6D /* Subject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Subject.storyboard; sourceTree = "<group>"; };
 		44F990D7275DE8DA00A75F6D /* TILTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILTableViewController.swift; sourceTree = "<group>"; };
-		6DC9053CB42FBC0E931CE728 /* Pods_Patricks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Patricks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE002A893FB828E32D766B6 /* Pods-Patricks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.release.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.release.xcconfig"; sourceTree = "<group>"; };
+		E207D6CD7C8AAF7D815B931B /* Pods_TILCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TILCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E970CFEFCF455A392FC1FF /* Pods-Patricks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.debug.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.debug.xcconfig"; sourceTree = "<group>"; };
+		EFB9B56A7E2E5B41803B0496 /* Pods-TILCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TILCalendar.release.xcconfig"; path = "Target Support Files/Pods-TILCalendar/Pods-TILCalendar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,33 +84,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F83D3E83C76AF5BECC2C791D /* Pods_Patricks.framework in Frameworks */,
+				4BA504B4CB5F54040DF456EA /* Pods_TILCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		443C14D52747986E007AE994 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				4441974F271AAFEA00B648DE /* Assets.xcassets */,
-				44419751271AAFEA00B648DE /* LaunchScreen.storyboard */,
-				44419746271AAFE900B648DE /* AppDelegate.swift */,
-				44419748271AAFE900B648DE /* SceneDelegate.swift */,
-				4406EBBB281E574E00692FF7 /* empty-animation.json */,
-				44419754271AAFEA00B648DE /* Info.plist */,
-				443C14D82747A04E007AE994 /* Main.storyboard */,
-				446DCCEF27915DC8008601A8 /* AppMainViewController.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
 		4441973A271AAFE900B648DE = {
 			isa = PBXGroup;
 			children = (
 				4441D72027606BD9003C13EF /* RxSwiftPractice.playground */,
-				44419745271AAFE900B648DE /* Patricks */,
+				44419745271AAFE900B648DE /* TILCalendar */,
 				44419744271AAFE900B648DE /* Products */,
 				59F645F507E0D58FFE895871 /* Pods */,
 				CCA3484D8D8B7F3E0721B42B /* Frameworks */,
@@ -118,22 +105,29 @@
 		44419744271AAFE900B648DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				44419743271AAFE900B648DE /* Patricks.app */,
+				44419743271AAFE900B648DE /* TILCalendar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		44419745271AAFE900B648DE /* Patricks */ = {
+		44419745271AAFE900B648DE /* TILCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				443C14D52747986E007AE994 /* App */,
+				4441974F271AAFEA00B648DE /* Assets.xcassets */,
+				44419751271AAFEA00B648DE /* LaunchScreen.storyboard */,
+				44419746271AAFE900B648DE /* AppDelegate.swift */,
+				44419748271AAFE900B648DE /* SceneDelegate.swift */,
+				44419754271AAFEA00B648DE /* Info.plist */,
+				443C14D82747A04E007AE994 /* Main.storyboard */,
+				446DCCEF27915DC8008601A8 /* AppMainViewController.swift */,
+				44A95808281FA7090027BA38 /* Resource */,
 				4441D71D275F32AE003C13EF /* CustomAPI */,
 				44918C8C281CE45F00992FA8 /* Utils */,
 				44918C94281CF2DC00992FA8 /* Model */,
 				44918C93281CF2C500992FA8 /* ViewModel */,
 				44918C95281CF2E100992FA8 /* View */,
 			);
-			path = Patricks;
+			path = TILCalendar;
 			sourceTree = "<group>";
 		};
 		4441D71D275F32AE003C13EF /* CustomAPI */ = {
@@ -209,11 +203,21 @@
 			path = Subject;
 			sourceTree = "<group>";
 		};
+		44A95808281FA7090027BA38 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4406EBBB281E574E00692FF7 /* empty-animation.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		59F645F507E0D58FFE895871 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				E9E970CFEFCF455A392FC1FF /* Pods-Patricks.debug.xcconfig */,
 				7DE002A893FB828E32D766B6 /* Pods-Patricks.release.xcconfig */,
+				021F2D6597D534260E0BEC05 /* Pods-TILCalendar.debug.xcconfig */,
+				EFB9B56A7E2E5B41803B0496 /* Pods-TILCalendar.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -221,7 +225,7 @@
 		CCA3484D8D8B7F3E0721B42B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6DC9053CB42FBC0E931CE728 /* Pods_Patricks.framework */,
+				E207D6CD7C8AAF7D815B931B /* Pods_TILCalendar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -229,9 +233,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		44419742271AAFE900B648DE /* Patricks */ = {
+		44419742271AAFE900B648DE /* TILCalendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 44419757271AAFEA00B648DE /* Build configuration list for PBXNativeTarget "Patricks" */;
+			buildConfigurationList = 44419757271AAFEA00B648DE /* Build configuration list for PBXNativeTarget "TILCalendar" */;
 			buildPhases = (
 				DED38026181F99A9FAFBACE6 /* [CP] Check Pods Manifest.lock */,
 				4441973F271AAFE900B648DE /* Sources */,
@@ -243,9 +247,9 @@
 			);
 			dependencies = (
 			);
-			name = Patricks;
+			name = TILCalendar;
 			productName = Patricks;
-			productReference = 44419743271AAFE900B648DE /* Patricks.app */;
+			productReference = 44419743271AAFE900B648DE /* TILCalendar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -263,7 +267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4441973E271AAFE900B648DE /* Build configuration list for PBXProject "Patricks" */;
+			buildConfigurationList = 4441973E271AAFE900B648DE /* Build configuration list for PBXProject "TILCalendar" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -276,7 +280,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				44419742271AAFE900B648DE /* Patricks */,
+				44419742271AAFE900B648DE /* TILCalendar */,
 			);
 		};
 /* End PBXProject section */
@@ -313,7 +317,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Patricks-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TILCalendar-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -326,15 +330,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Patricks/Pods-Patricks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TILCalendar/Pods-TILCalendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Patricks/Pods-Patricks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TILCalendar/Pods-TILCalendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Patricks/Pods-Patricks-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TILCalendar/Pods-TILCalendar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -502,7 +506,7 @@
 		};
 		44419758271AAFEA00B648DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9E970CFEFCF455A392FC1FF /* Pods-Patricks.debug.xcconfig */;
+			baseConfigurationReference = 021F2D6597D534260E0BEC05 /* Pods-TILCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -510,7 +514,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Patricks/App/Info.plist;
+				INFOPLIST_FILE = TILCalendar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TIL Calendar";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -522,7 +527,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.Patricks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jsy.tilcalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -532,7 +537,7 @@
 		};
 		44419759271AAFEA00B648DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DE002A893FB828E32D766B6 /* Pods-Patricks.release.xcconfig */;
+			baseConfigurationReference = EFB9B56A7E2E5B41803B0496 /* Pods-TILCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -540,7 +545,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Patricks/App/Info.plist;
+				INFOPLIST_FILE = TILCalendar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TIL Calendar";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -552,7 +558,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.Patricks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jsy.tilcalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -563,7 +569,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4441973E271AAFE900B648DE /* Build configuration list for PBXProject "Patricks" */ = {
+		4441973E271AAFE900B648DE /* Build configuration list for PBXProject "TILCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				44419755271AAFEA00B648DE /* Debug */,
@@ -572,7 +578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		44419757271AAFEA00B648DE /* Build configuration list for PBXNativeTarget "Patricks" */ = {
+		44419757271AAFEA00B648DE /* Build configuration list for PBXNativeTarget "TILCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				44419758271AAFEA00B648DE /* Debug */,

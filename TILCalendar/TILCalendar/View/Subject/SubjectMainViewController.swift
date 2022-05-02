@@ -68,11 +68,16 @@ class SubjectMainViewController: UIViewController {
                 guard let detailVC = self?.storyboard?.instantiateViewController(withIdentifier: "SubjectDetailTableViewController") as? SubjectDetailTableViewController else {return}
                 
                 detailVC.subjectId = subject.id
-                print(subject.id)
                 
                 self?.navigationController?.pushViewController(detailVC, animated: true)
                 
                 self?.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        _ = tableView.rx.modelDeleted(Subject.self)
+            .subscribe(onNext: { [weak self] deletedSubject in
+                self?.subjectViewModel.deleteSubject(id: deletedSubject.id)
             })
             .disposed(by: disposeBag)
     }
@@ -91,7 +96,6 @@ extension SubjectMainViewController {
     }
     
     @IBAction func createButtonClicked() {
-        
         guard let createVC = storyboard?.instantiateViewController(withIdentifier: "SubjectCreateViewController") as? SubjectCreateViewController else {return}
         
         createVC.modalPresentationStyle = .fullScreen
