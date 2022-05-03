@@ -3,6 +3,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Lottie
 
 class TILSubjectSelectViewController: UIViewController {
     
@@ -14,24 +15,39 @@ class TILSubjectSelectViewController: UIViewController {
 
     @IBOutlet weak var subjectPickerView: UIPickerView!
     
+    let emptyView = AnimationView(name: "empty-animation")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subjectPickerView.delegate = nil
-        subjectPickerView.dataSource = nil
-        
+        setDelegate()
+        bindPickerView()
+        bindEmptyView()
     }
     
+    private func setDelegate() {
+        subjectPickerView.delegate = nil
+        subjectPickerView.dataSource = nil
+    }
+    
+    private func bindEmptyView() {
+        self.view.addSubview(emptyView)
+        emptyView.setUp()
+        emptyView.bind(relay: subjectList, disposeBag: disposeBag)
+    }
+ 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subjectList.accept(subjectViewModel.allSubject())
+    }
+    
+    private func bindPickerView() {
         _ = subjectList
             .bind(to: subjectPickerView.rx.itemTitles) { _, item in
                 self.selectedSubjectId = item.id
                 return item.name
             }
             .disposed(by: disposeBag)
-            
     }
     
     @IBAction func doneButtonClicked(_ sender: UIButton) {

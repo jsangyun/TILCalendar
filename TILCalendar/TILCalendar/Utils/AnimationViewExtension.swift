@@ -2,6 +2,8 @@
 
 import Foundation
 import Lottie
+import RxSwift
+import RxCocoa
 
 extension AnimationView {
     func setUp() {
@@ -11,5 +13,19 @@ extension AnimationView {
         self.center.y = superView.center.y
         self.contentMode = .scaleAspectFit
         self.loopMode = .loop
+    }
+    
+    func bind<T>(relay: BehaviorRelay<[T]>, disposeBag: DisposeBag) {
+        _ = relay
+            .subscribe(onNext: { [weak self] value in
+                if value.isEmpty {
+                    self?.isHidden = false
+                    self?.play()
+                } else {
+                    self?.isHidden = true
+                    self?.stop()
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }

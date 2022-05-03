@@ -12,7 +12,7 @@
         <!--TIL Calendar-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="TILMainViewController" id="Y6W-OH-hqX" customClass="TILMainViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TILMainViewController" id="Y6W-OH-hqX" customClass="TILMainViewController" customModule="TILCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
         <!--Table View Controller-->
         <scene sceneID="4ea-Py-nev">
             <objects>
-                <viewController storyboardIdentifier="TILTableViewController" id="VPq-cJ-xqZ" customClass="TILTableViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TILTableViewController" id="VPq-cJ-xqZ" customClass="TILTableViewController" customModule="TILCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j9e-uz-2Gp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TILTableViewCell" id="TaP-k1-Vln" customClass="TILTableViewCell" customModule="Patricks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TILTableViewCell" id="TaP-k1-Vln" customClass="TILTableViewCell" customModule="TILCalendar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TaP-k1-Vln" id="kjx-R8-7er">
@@ -111,7 +111,7 @@
         <!--Detail View Controller-->
         <scene sceneID="LN2-mY-3WX">
             <objects>
-                <viewController storyboardIdentifier="TILDetailViewController" id="ZTe-SE-hbi" customClass="TILDetailViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TILDetailViewController" id="ZTe-SE-hbi" customClass="TILDetailViewController" customModule="TILCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fhe-ur-EQg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,7 +190,7 @@
         <!--Edit View Controller-->
         <scene sceneID="7S0-xm-5Mq">
             <objects>
-                <viewController storyboardIdentifier="TILEditViewController" id="yBN-sq-qET" customClass="TILEditViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TILEditViewController" id="yBN-sq-qET" customClass="TILEditViewController" customModule="TILCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2hI-4m-N83">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,7 +276,7 @@
         <!--Subject Select View Controller-->
         <scene sceneID="1Xy-jY-zjW">
             <objects>
-                <viewController storyboardIdentifier="TILSubjectSelectViewController" id="Cbu-04-hJQ" customClass="TILSubjectSelectViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TILSubjectSelectViewController" id="Cbu-04-hJQ" customClass="TILSubjectSelectViewController" customModule="TILCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K35-s6-vgR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

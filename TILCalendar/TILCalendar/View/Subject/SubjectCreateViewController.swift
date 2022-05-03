@@ -16,6 +16,14 @@ class SubjectCreateViewController: UIViewController {
         subjectNameTextField.becomeFirstResponder()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let parentVC = self.presentingViewController as? TILSubjectSelectViewController {
+            parentVC.subjectList.accept(subjectViewModel.allSubject())
+        }
+    }
+    
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -29,12 +37,7 @@ class SubjectCreateViewController: UIViewController {
             
         } else {
             subjectViewModel.saveNewSubject(name: subjectNameTextField.text!)
-            dismiss(animated: true) {
-                if let parentVC = self.presentingViewController as? TILSubjectSelectViewController {
-                    parentVC.subjectViewModel.loadData()
-                }
-            }
+            dismiss(animated: true, completion: nil)
         }
     }
-    
 }

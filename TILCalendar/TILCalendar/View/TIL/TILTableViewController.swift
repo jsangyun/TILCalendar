@@ -38,18 +38,7 @@ class TILTableViewController: UIViewController {
     private func bindEmptyView() {
         view.addSubview(emptyView)
         emptyView.setUp()
-        
-        _ = tilList
-            .subscribe(onNext: { [weak self] list in
-                if list.isEmpty {
-                    self?.emptyView.isHidden = false
-                    self?.emptyView.play()
-                } else {
-                    self?.emptyView.isHidden = true
-                    self?.emptyView.stop()
-                }
-            })
-            .disposed(by: disposeBag)
+        emptyView.bind(relay: tilList, disposeBag: disposeBag)
     }
     
     private func bindTableView() {

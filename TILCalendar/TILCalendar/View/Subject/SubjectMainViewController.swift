@@ -38,17 +38,7 @@ class SubjectMainViewController: UIViewController {
     private func bindEmptyView() {
         view.addSubview(emptyView)
         emptyView.setUp()
-        
-        _ = subjectList
-            .subscribe(onNext: { [weak self] list in
-                if list.isEmpty {
-                    self?.emptyView.isHidden = false
-                    self?.emptyView.play()
-                } else {
-                    self?.emptyView.isHidden = true
-                }
-            })
-            .disposed(by: disposeBag)
+        emptyView.bind(relay: subjectList, disposeBag: disposeBag)
     }
     
     private func bindTableView() {
