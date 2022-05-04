@@ -24,7 +24,7 @@ class TILMainViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tilList.accept(tilViewModel.allTIL())
+        tilList.accept(tilViewModel.allTIL)
         tilCalendar.reloadData()
     }
     

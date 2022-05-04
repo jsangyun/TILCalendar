@@ -4,35 +4,31 @@ import Foundation
 
 class SubjectViewModel {
     
-    private var subjectList = Array<Subject>()
     private var subjectFilename = "subject.json"
     
-    init() {
-        loadData()
+    private var subjectList: [Subject] {
+        get { APIService.load(subjectFilename) }
+        set { APIService.save(subjectFilename, newValue) }
     }
     
-    func loadData() {
-        let subjectData: [Subject] = APIService.load(subjectFilename)
-        subjectList = subjectData
+    var allSubject: [Subject] {
+        subjectList
     }
     
-    func allSubject() -> [Subject] {
-        loadData()
-        return subjectList
-    }
-    
-    func getSubjectName(id: String) -> String {
-        loadData()
+    func subjectName(of id: String) -> String {
         return subjectList.filter{$0.id == id}[0].name
     }
     
     func saveNewSubject(name: String) {
-        let newSubject = Subject(UUID().uuidString, name)
-        subjectList.append(newSubject)
-        APIService.save(subjectFilename, subjectList)
+        subjectList.append(Subject(UUID().uuidString, name))
+    }
+    
+    func updateSubject(id: String, newName: String) {
+        subjectList = subjectList.filter{$0.id != id}
+        subjectList.append(Subject(id, newName))
     }
     
     func deleteSubject(id: String) {
-        APIService.save(subjectFilename, subjectList.filter{$0.id != id})
+        subjectList = subjectList.filter{$0.id != id}
     }
 }

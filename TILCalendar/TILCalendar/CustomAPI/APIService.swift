@@ -14,7 +14,6 @@ class APIService {
             try data = Data(contentsOf: fileUrl)
         } catch {
             /* when there is no json file at directory, create one */
-            print("Creating empty \(filename) to \(filePath)")
             
             let encoder = JSONEncoder()
             let emptyJson: [T] = []

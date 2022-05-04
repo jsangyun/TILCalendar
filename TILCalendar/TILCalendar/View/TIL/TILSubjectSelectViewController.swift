@@ -22,23 +22,16 @@ class TILSubjectSelectViewController: UIViewController {
         
         setDelegate()
         bindPickerView()
-        bindEmptyView()
     }
     
     private func setDelegate() {
         subjectPickerView.delegate = nil
         subjectPickerView.dataSource = nil
     }
-    
-    private func bindEmptyView() {
-        self.view.addSubview(emptyView)
-        emptyView.setUp()
-        emptyView.bind(relay: subjectList, disposeBag: disposeBag)
-    }
  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        subjectList.accept(subjectViewModel.allSubject())
+        subjectList.accept(subjectViewModel.allSubject)
     }
     
     private func bindPickerView() {

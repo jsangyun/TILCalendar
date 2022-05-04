@@ -12,7 +12,7 @@ class SubjectCreateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         subjectNameTextField.becomeFirstResponder()
     }
     
@@ -20,7 +20,7 @@ class SubjectCreateViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         if let parentVC = self.presentingViewController as? TILSubjectSelectViewController {
-            parentVC.subjectList.accept(subjectViewModel.allSubject())
+            parentVC.subjectList.accept(subjectViewModel.allSubject)
         }
     }
     

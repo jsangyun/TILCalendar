@@ -1,59 +1,50 @@
 //  TILVIewModel.swift
 
 import Foundation
+import RxSwift
 
 class TILViewModel {
-    private var tilList = Array<TIL>()
+    private var tilList: [TIL] {
+        get { APIService.load(tilFilename) }
+        set { APIService.save(tilFilename, newValue) }
+    }
     private var tilFilename = "til.json"
     
-    init() {
-        loadData()
+    var allTIL: [TIL] {
+        tilList
     }
     
-    func loadData() {
-        let tilData: [TIL] = APIService.load(tilFilename)
-        tilList = tilData
-    }
-    
-    func allTIL() -> [TIL] {
-        loadData()
-        return tilList
-    }
-    
+    /*
+     Calendar 탭에서 열려져 있던 상태에서 Subject 탭에서 삭제 시
+     Crash 발생 방지를 위해 Optional 타입으로 반환
+    */
     func til(id: String) -> TIL? {
-        loadData()
-        let result = tilList.filter{$0.id == id}
-        return result.isEmpty ? nil : result[0]
+        return tilList.filter{$0.id == id}.first
     }
     
     func getTILByDate(date: Date) -> [TIL] {
-        loadData()
         return tilList.filter{$0.createdDate == date}
     }
     
     func getTILBySubject(subjectId: String) -> [TIL] {
-        loadData()
         return tilList.filter{$0.subjectId == subjectId}
     }
     
     func saveNewTil(title: String, content: String, createdDate: Date, subjectId: String) {
         let newTil = TIL(UUID().uuidString, title, content, createdDate, subjectId)
         tilList.append(newTil)
-        APIService.save(tilFilename, tilList)
     }
     
     func updateTil(id: String, title: String, content: String, createdDate: Date, subjectId: String) {
-        let updatedTil = TIL(id, title, content, createdDate, subjectId)
         tilList = tilList.filter{$0.id != id}
-        tilList.append(updatedTil)
-        APIService.save(tilFilename, tilList)
+        tilList.append(TIL(id, title, content, createdDate, subjectId))
     }
     
     func deleteTil(id: String) {
-        APIService.save(tilFilename, tilList.filter{$0.id != id})
+        tilList = tilList.filter{$0.id != id}
     }
     
     func deleteAllSubjectTil(subjectId: String) {
-        APIService.save(tilFilename, tilList.filter{$0.subjectId != subjectId})
+        tilList = tilList.filter{$0.subjectId != subjectId}
     }
 }

@@ -55,7 +55,6 @@
 		44419752271AAFEA00B648DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44419754271AAFEA00B648DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = TILCalendar/Info.plist; sourceTree = SOURCE_ROOT; };
 		4441D71E275F3537003C13EF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		4441D72027606BD9003C13EF /* RxSwiftPractice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPractice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4441D72527609256003C13EF /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		446DCCE5278AC287008601A8 /* TILEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILEditViewController.swift; sourceTree = "<group>"; };
 		446DCCE9278FF922008601A8 /* SubjectDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +93,6 @@
 		4441973A271AAFE900B648DE = {
 			isa = PBXGroup;
 			children = (
-				4441D72027606BD9003C13EF /* RxSwiftPractice.playground */,
 				44419745271AAFE900B648DE /* TILCalendar */,
 				44419744271AAFE900B648DE /* Products */,
 				59F645F507E0D58FFE895871 /* Pods */,
@@ -179,9 +177,9 @@
 		44918C96281CF2EF00992FA8 /* TIL */ = {
 			isa = PBXGroup;
 			children = (
+				44D360FD2820E21C005C8BEC /* Cell */,
 				443C14E12747AA1F007AE994 /* TIL.storyboard */,
 				443C14E32747AC0F007AE994 /* TILMainViewController.swift */,
-				44B851C5277E345F002524DF /* TILTableViewCell.swift */,
 				44F990D7275DE8DA00A75F6D /* TILTableViewController.swift */,
 				44B851C7277F1D86002524DF /* TILDetailViewController.swift */,
 				446DCCE5278AC287008601A8 /* TILEditViewController.swift */,
@@ -193,9 +191,9 @@
 		44918C97281CF30400992FA8 /* Subject */ = {
 			isa = PBXGroup;
 			children = (
+				44D360FE2820E227005C8BEC /* Cell */,
 				44F990D5275B32FF00A75F6D /* Subject.storyboard */,
 				44F0450C27B37C1700C2D222 /* SubjectMainViewController.swift */,
-				4441D72527609256003C13EF /* SubjectTableViewCell.swift */,
 				446DCCE9278FF922008601A8 /* SubjectDetailTableViewController.swift */,
 				44F0451427B7816B00C2D222 /* SubjectDetailTableViewCell.swift */,
 				44F0450E27B3DCC500C2D222 /* SubjectCreateViewController.swift */,
@@ -209,6 +207,22 @@
 				4406EBBB281E574E00692FF7 /* empty-animation.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		44D360FD2820E21C005C8BEC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				44B851C5277E345F002524DF /* TILTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		44D360FE2820E227005C8BEC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4441D72527609256003C13EF /* SubjectTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		59F645F507E0D58FFE895871 /* Pods */ = {

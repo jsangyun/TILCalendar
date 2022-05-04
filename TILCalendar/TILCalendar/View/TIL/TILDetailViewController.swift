@@ -58,6 +58,6 @@ class TILDetailViewController: UIViewController {
     func setLabelText(_ til: TIL) {
         tilTitleLabel.text = til.title
         tilContentLabel.text = til.content
-        tilSubjectLabel.text = subjectViewModel.getSubjectName(id: til.subjectId)
+        tilSubjectLabel.text = subjectViewModel.subjectName(of: til.subjectId)
     }
 }

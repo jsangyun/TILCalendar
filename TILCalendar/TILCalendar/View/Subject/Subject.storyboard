@@ -13,7 +13,7 @@
         <!--Subject-->
         <scene sceneID="PUe-UD-cKj">
             <objects>
-                <viewController id="jiH-oS-QWu" customClass="SubjectMainViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jiH-oS-QWu" customClass="SubjectMainViewController" customModule="TILCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hcz-LB-W35">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,15 +21,15 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nHT-ww-KJ5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SubjectTableViewCell" id="erF-I3-6Tk" customClass="SubjectTableViewCell" customModule="Patricks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjectTableViewCell" id="erF-I3-6Tk" customClass="SubjectTableViewCell" customModule="TILCalendar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="erF-I3-6Tk" id="UfK-9t-C2P">
-                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-Hw-fmm">
-                                                    <rect key="frame" x="35" y="12.5" width="337.5" height="20.5"/>
+                                                    <rect key="frame" x="30" y="12.5" width="41.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="textColor" red="0.61568629740000003" green="0.2588235438" blue="0.24313727020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -37,8 +37,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SWI-Hw-fmm" firstAttribute="centerY" secondItem="UfK-9t-C2P" secondAttribute="centerY" id="F4x-tc-3bv"/>
-                                                <constraint firstItem="SWI-Hw-fmm" firstAttribute="leading" secondItem="UfK-9t-C2P" secondAttribute="leadingMargin" constant="15" id="j8u-9g-2GA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="SWI-Hw-fmm" secondAttribute="trailing" constant="5" id="ksU-8u-JXr"/>
+                                                <constraint firstItem="SWI-Hw-fmm" firstAttribute="leading" secondItem="UfK-9t-C2P" secondAttribute="leadingMargin" constant="10" id="j8u-9g-2GA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -61,7 +60,7 @@
                                     <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
-                                    <action selector="createButtonClicked" destination="jiH-oS-QWu" eventType="touchUpInside" id="vXM-Ys-mwE"/>
+                                    <action selector="createButtonClicked" destination="jiH-oS-QWu" eventType="touchUpInside" id="osO-zm-Dup"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,7 +88,7 @@
         <!--Subject Detail Table View Controller-->
         <scene sceneID="b9S-tA-mrC">
             <objects>
-                <viewController storyboardIdentifier="SubjectDetailTableViewController" id="CuQ-77-tY8" customClass="SubjectDetailTableViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubjectDetailTableViewController" id="CuQ-77-tY8" customClass="SubjectDetailTableViewController" customModule="TILCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hvO-uP-wpr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +97,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjectDetailTableViewCell" id="Mhp-6w-ofp" customClass="SubjectDetailTableViewCell" customModule="Patricks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjectDetailTableViewCell" id="Mhp-6w-ofp" customClass="SubjectDetailTableViewCell" customModule="TILCalendar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mhp-6w-ofp" id="WaO-zM-aHg">
@@ -106,13 +105,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIL Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvK-us-uYY">
-                                                    <rect key="frame" x="30" y="13.5" width="219.5" height="17"/>
+                                                    <rect key="frame" x="30" y="13.5" width="52" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.61568629740000003" green="0.2588235438" blue="0.24313727020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIL Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb8-Yt-bo0">
-                                                    <rect key="frame" x="336.5" y="14.5" width="47.5" height="14.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000년 00월 00일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb8-Yt-bo0">
+                                                    <rect key="frame" x="295.5" y="14.5" width="98.5" height="14.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="84B-jp-lN2"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -120,10 +122,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Mb8-Yt-bo0" firstAttribute="centerY" secondItem="WaO-zM-aHg" secondAttribute="centerY" id="1F0-Ti-jUB"/>
+                                                <constraint firstItem="Mb8-Yt-bo0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jvK-us-uYY" secondAttribute="trailing" constant="10" id="4Wj-y2-BDX"/>
                                                 <constraint firstItem="jvK-us-uYY" firstAttribute="centerY" secondItem="WaO-zM-aHg" secondAttribute="centerY" id="Xqg-Gl-1qm"/>
                                                 <constraint firstItem="jvK-us-uYY" firstAttribute="leading" secondItem="WaO-zM-aHg" secondAttribute="leadingMargin" constant="10" id="rHF-um-mnp"/>
-                                                <constraint firstItem="jvK-us-uYY" firstAttribute="width" secondItem="WaO-zM-aHg" secondAttribute="width" multiplier="0.53" id="rOx-Qz-s0S"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Mb8-Yt-bo0" secondAttribute="trailing" constant="10" id="zen-fy-Bpy"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Mb8-Yt-bo0" secondAttribute="trailing" id="zen-fy-Bpy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -154,7 +156,7 @@
         <!--Subject Create View Controller-->
         <scene sceneID="dlH-Mf-y5C">
             <objects>
-                <viewController storyboardIdentifier="SubjectCreateViewController" id="aHe-pn-La7" customClass="SubjectCreateViewController" customModule="Patricks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubjectCreateViewController" id="aHe-pn-La7" customClass="SubjectCreateViewController" customModule="TILCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3pL-9B-Rec">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

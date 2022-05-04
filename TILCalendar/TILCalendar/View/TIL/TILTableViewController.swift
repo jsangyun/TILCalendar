@@ -46,12 +46,12 @@ class TILTableViewController: UIViewController {
         // data binding
         _ = tilList.bind(to: tilTableView.rx.items(cellIdentifier: cellIdentifier, cellType: TILTableViewCell.self)) { [weak self] (index, til, cell) in
             
-            cell.bind(title: til.title, subjectName: (self?.subjectViewModel.getSubjectName(id: til.subjectId))!)
+            cell.bind(title: til.title, subjectName: (self?.subjectViewModel.subjectName(of: til.subjectId))!)
             
         }
         .disposed(by: disposeBag)
         
-        // select event binding
+        // select event
         Observable.zip(tilTableView.rx.modelSelected(TIL.self), tilTableView.rx.itemSelected)
             .subscribe(onNext: { [weak self] (til, indexPath) in
                 
@@ -65,7 +65,7 @@ class TILTableViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        // delete event binding
+        // delete event
         _ = tilTableView.rx.modelDeleted(TIL.self)
             .subscribe(onNext: { [weak self] deletedTil in
                 

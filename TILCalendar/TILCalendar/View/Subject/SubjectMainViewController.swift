@@ -8,14 +8,13 @@ import Lottie
 class SubjectMainViewController: UIViewController {
     
     let subjectViewModel = SubjectViewModel()
+    let tilViewModel = TILViewModel()
     var disposeBag = DisposeBag()
     
     var subjectList = BehaviorRelay<[Subject]>(value: [])
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createButton: UIButton!
-    
-    var allSubjects: [Subject] = []
     
     let emptyView = AnimationView(name: "empty-animation")
     let cellIdentifier = "SubjectTableViewCell"
@@ -32,7 +31,8 @@ class SubjectMainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        subjectList.accept(subjectViewModel.allSubject())
+        
+        subjectList.accept(subjectViewModel.allSubject)
     }
     
     private func bindEmptyView() {
@@ -42,6 +42,7 @@ class SubjectMainViewController: UIViewController {
     }
     
     private func bindTableView() {
+        
         // data binding
         _ = subjectList
             .bind(to: tableView.rx.items(cellIdentifier: cellIdentifier, cellType: SubjectTableViewCell.self)) { (index, item, cell) in
@@ -51,7 +52,7 @@ class SubjectMainViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        // select event binding
+        // select event
         _ = Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Subject.self))
             .subscribe(onNext: {[weak self] (indexPath, subject) in
                 
@@ -65,13 +66,21 @@ class SubjectMainViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        // delete event
         _ = tableView.rx.modelDeleted(Subject.self)
             .subscribe(onNext: { [weak self] deletedSubject in
+                
                 self?.subjectViewModel.deleteSubject(id: deletedSubject.id)
+                self?.tilViewModel.deleteAllSubjectTil(subjectId: deletedSubject.id)
+                
+                if let newList = self?.subjectViewModel.allSubject {
+                    self?.subjectList.accept(newList)
+                }
+                
             })
             .disposed(by: disposeBag)
+        
     }
-    
 }
 
 extension SubjectMainViewController {

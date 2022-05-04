@@ -50,7 +50,7 @@ class TILEditViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let subjectId = selectedSubjectId else {return}
-        subjectName.accept(subjectViewModel.getSubjectName(id: subjectId))
+        subjectName.accept(subjectViewModel.subjectName(of: subjectId))
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
@@ -114,7 +114,7 @@ extension TILEditViewController {
     //fill data to textview / textfield
     func fillText(_ til: TIL) {
         
-        subjectName.accept(subjectViewModel.getSubjectName(id: til.subjectId))
+        subjectName.accept(subjectViewModel.subjectName(of: til.subjectId))
         
         titleTextField.text = til.title
         contentTextView.text = til.content
@@ -124,7 +124,7 @@ extension TILEditViewController {
     //check whether data is changed or not
     func isThereChange() -> Bool {
         if (mode == .edit) {
-            if (titleTextField.text != til!.title) || (subjectSelectButton.titleLabel?.text != subjectViewModel.getSubjectName(id: til!.subjectId)) || (contentTextView.text != til!.content) {
+            if (titleTextField.text != til!.title) || (subjectSelectButton.titleLabel?.text != subjectViewModel.subjectName(of: til!.subjectId)) || (contentTextView.text != til!.content) {
                 return true
             }
         }

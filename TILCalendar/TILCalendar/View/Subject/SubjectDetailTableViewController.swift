@@ -40,7 +40,7 @@ class SubjectDetailTableViewController: UIViewController {
     }
     
     private func setNavigationBar() {
-        subjectName = subjectViewModel.getSubjectName(id: subjectId)
+        subjectName = subjectViewModel.subjectName(of: subjectId)
         self.navigationItem.title = subjectName
         self.navigationItem.largeTitleDisplayMode = .never
     }
