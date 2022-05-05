@@ -7,7 +7,9 @@ target 'TILCalendar' do
 
   # Pods for TILCalendar
   pod 'FSCalendar'
-  pod 'RxSwift', '6.2.0'
-  pod 'RxCocoa', '6.2.0'
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
+  pod 'RxDataSources'
   pod 'lottie-ios'
+
 end

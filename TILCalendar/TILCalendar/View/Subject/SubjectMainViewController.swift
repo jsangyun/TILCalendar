@@ -3,6 +3,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 import Lottie
 
 class SubjectMainViewController: UIViewController {
@@ -70,12 +71,24 @@ class SubjectMainViewController: UIViewController {
         _ = tableView.rx.modelDeleted(Subject.self)
             .subscribe(onNext: { [weak self] deletedSubject in
                 
-                self?.subjectViewModel.deleteSubject(id: deletedSubject.id)
-                self?.tilViewModel.deleteAllSubjectTil(subjectId: deletedSubject.id)
+                let warningMessage = "해당 과목의 TIL들도 함께 삭제됩니다!"
+                let alertController = UIAlertController(title: "경고!", message: warningMessage, preferredStyle: .actionSheet)
                 
-                if let newList = self?.subjectViewModel.allSubject {
-                    self?.subjectList.accept(newList)
+                let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+                    self?.subjectViewModel.deleteSubject(id: deletedSubject.id)
+                    self?.tilViewModel.deleteAllSubjectTil(subjectId: deletedSubject.id)
+                    
+                    if let newList = self?.subjectViewModel.allSubject {
+                        self?.subjectList.accept(newList)
+                    }
                 }
+                
+                let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+                
+                alertController.addAction(deleteAction)
+                alertController.addAction(cancelAction)
+                
+                self?.present(alertController, animated: true)
                 
             })
             .disposed(by: disposeBag)

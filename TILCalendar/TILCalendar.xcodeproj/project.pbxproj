@@ -36,11 +36,10 @@
 		44F990D4275B27D000A75F6D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990D3275B27D000A75F6D /* Subject.swift */; };
 		44F990D6275B32FF00A75F6D /* Subject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F990D5275B32FF00A75F6D /* Subject.storyboard */; };
 		44F990D8275DE8DA00A75F6D /* TILTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F990D7275DE8DA00A75F6D /* TILTableViewController.swift */; };
-		4BA504B4CB5F54040DF456EA /* Pods_TILCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E207D6CD7C8AAF7D815B931B /* Pods_TILCalendar.framework */; };
+		F2C576182B41CB981DD8A4A9 /* Pods_TILCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA9DC4747C54D903EB51A27 /* Pods_TILCalendar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		021F2D6597D534260E0BEC05 /* Pods-TILCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TILCalendar.debug.xcconfig"; path = "Target Support Files/Pods-TILCalendar/Pods-TILCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 		4406EBB7281E312000692FF7 /* TILViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILViewModel.swift; sourceTree = "<group>"; };
 		4406EBBB281E574E00692FF7 /* empty-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "empty-animation.json"; sourceTree = "<group>"; };
 		4406EBBE281E5A2200692FF7 /* AnimationViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewExtension.swift; sourceTree = "<group>"; };
@@ -72,10 +71,9 @@
 		44F990D3275B27D000A75F6D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		44F990D5275B32FF00A75F6D /* Subject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Subject.storyboard; sourceTree = "<group>"; };
 		44F990D7275DE8DA00A75F6D /* TILTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TILTableViewController.swift; sourceTree = "<group>"; };
-		7DE002A893FB828E32D766B6 /* Pods-Patricks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.release.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.release.xcconfig"; sourceTree = "<group>"; };
-		E207D6CD7C8AAF7D815B931B /* Pods_TILCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TILCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9E970CFEFCF455A392FC1FF /* Pods-Patricks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patricks.debug.xcconfig"; path = "Target Support Files/Pods-Patricks/Pods-Patricks.debug.xcconfig"; sourceTree = "<group>"; };
-		EFB9B56A7E2E5B41803B0496 /* Pods-TILCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TILCalendar.release.xcconfig"; path = "Target Support Files/Pods-TILCalendar/Pods-TILCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		4BA9DC4747C54D903EB51A27 /* Pods_TILCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TILCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D39C44FB253C63B14E1EB31 /* Pods-TILCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TILCalendar.release.xcconfig"; path = "Target Support Files/Pods-TILCalendar/Pods-TILCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		AFE58F9A6606A8892A0F891C /* Pods-TILCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TILCalendar.debug.xcconfig"; path = "Target Support Files/Pods-TILCalendar/Pods-TILCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BA504B4CB5F54040DF456EA /* Pods_TILCalendar.framework in Frameworks */,
+				F2C576182B41CB981DD8A4A9 /* Pods_TILCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +94,7 @@
 				44419745271AAFE900B648DE /* TILCalendar */,
 				44419744271AAFE900B648DE /* Products */,
 				59F645F507E0D58FFE895871 /* Pods */,
-				CCA3484D8D8B7F3E0721B42B /* Frameworks */,
+				58D7E3A9AE9EB002548D351F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,8 +120,8 @@
 				4441D71D275F32AE003C13EF /* CustomAPI */,
 				44918C8C281CE45F00992FA8 /* Utils */,
 				44918C94281CF2DC00992FA8 /* Model */,
-				44918C93281CF2C500992FA8 /* ViewModel */,
 				44918C95281CF2E100992FA8 /* View */,
+				44918C93281CF2C500992FA8 /* ViewModel */,
 			);
 			path = TILCalendar;
 			sourceTree = "<group>";
@@ -225,23 +223,21 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		58D7E3A9AE9EB002548D351F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BA9DC4747C54D903EB51A27 /* Pods_TILCalendar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		59F645F507E0D58FFE895871 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E9E970CFEFCF455A392FC1FF /* Pods-Patricks.debug.xcconfig */,
-				7DE002A893FB828E32D766B6 /* Pods-Patricks.release.xcconfig */,
-				021F2D6597D534260E0BEC05 /* Pods-TILCalendar.debug.xcconfig */,
-				EFB9B56A7E2E5B41803B0496 /* Pods-TILCalendar.release.xcconfig */,
+				AFE58F9A6606A8892A0F891C /* Pods-TILCalendar.debug.xcconfig */,
+				4D39C44FB253C63B14E1EB31 /* Pods-TILCalendar.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		CCA3484D8D8B7F3E0721B42B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E207D6CD7C8AAF7D815B931B /* Pods_TILCalendar.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,11 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44419757271AAFEA00B648DE /* Build configuration list for PBXNativeTarget "TILCalendar" */;
 			buildPhases = (
-				DED38026181F99A9FAFBACE6 /* [CP] Check Pods Manifest.lock */,
+				8AD11ACA92EB42F32628B3DF /* [CP] Check Pods Manifest.lock */,
 				4441973F271AAFE900B648DE /* Sources */,
 				44419740271AAFE900B648DE /* Frameworks */,
 				44419741271AAFE900B648DE /* Resources */,
-				F2D3E3551BA771BE724215E2 /* [CP] Embed Pods Frameworks */,
+				24CE60CCAC687643F754DF9E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,7 +312,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DED38026181F99A9FAFBACE6 /* [CP] Check Pods Manifest.lock */ = {
+		24CE60CCAC687643F754DF9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TILCalendar/Pods-TILCalendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TILCalendar/Pods-TILCalendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TILCalendar/Pods-TILCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AD11ACA92EB42F32628B3DF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,23 +349,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2D3E3551BA771BE724215E2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TILCalendar/Pods-TILCalendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TILCalendar/Pods-TILCalendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TILCalendar/Pods-TILCalendar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -520,7 +516,7 @@
 		};
 		44419758271AAFEA00B648DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 021F2D6597D534260E0BEC05 /* Pods-TILCalendar.debug.xcconfig */;
+			baseConfigurationReference = AFE58F9A6606A8892A0F891C /* Pods-TILCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -551,7 +547,7 @@
 		};
 		44419759271AAFEA00B648DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFB9B56A7E2E5B41803B0496 /* Pods-TILCalendar.release.xcconfig */;
+			baseConfigurationReference = 4D39C44FB253C63B14E1EB31 /* Pods-TILCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

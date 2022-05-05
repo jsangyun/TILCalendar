@@ -26,4 +26,11 @@ struct TIL: Codable {
         case subjectId = "subject_id"
     }
     
+    mutating func update(title: String, content: String, createdDate: Date, subjectId: String) {
+        self.title = title
+        self.content = content
+        self.createdDate = createdDate
+        self.subjectId = subjectId
+    }
+    
 }

@@ -17,4 +17,8 @@ struct Subject: Codable {
         case name
     }
     
+    mutating func update(newName: String) {
+        self.name = newName
+    }
+    
 }
